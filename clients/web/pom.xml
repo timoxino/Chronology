@@ -16,13 +16,13 @@
   <description>This bundle contains GWT web application</description>
 
   <properties>
-    <gwt.version>2.5</gwt.version>
+    <gwt.version>2.4.0</gwt.version>
     <gwt.war>${project.build.directory}/shell-war</gwt.war>
     <gwt.webapp>${basedir}/src/main/webapp</gwt.webapp>
-    <gwt.module.name>by.chronology.web.TimeManager</gwt.module.name>
+    <gwt.module.name>by.chronology.web.TimeTracker</gwt.module.name>
     <gwt.draftCompile>false</gwt.draftCompile>
     <hosted.port>8888</hosted.port>
-    <gin.version>2.0</gin.version>
+    <gin.version>2.0.0</gin.version>
   </properties>
 
   <profiles>
@@ -52,7 +52,7 @@
                       <directory>${gwt.webapp}</directory>
                       <includes>
                         <include>**/*.css</include>
-                        <include>**/TimeManager.html</include>
+                        <include>**/TimeTracker.html</include>
                       </includes>
                     </resource>
                     <resource>
@@ -60,7 +60,7 @@
                       <directory>${gwt.webapp}</directory>
                       <excludes>
                         <exclude>**/*.css</exclude>
-                        <exclude>**/TimeManager.html</exclude>
+                        <exclude>**/TimeTracker.html</exclude>
                       </excludes>
                     </resource>
                   </resources>
@@ -95,8 +95,8 @@
               </execution>
             </executions>
             <configuration>
-              <extraJvmArgs>-Xmx1024M -Xss1024k -XX:MaxPermSize=256m -Dtimemanager.config=classpath:environment.properties</extraJvmArgs>
-              <runTarget>TimeManager.html</runTarget>
+              <extraJvmArgs>-Xmx1024M -Xss1024k -XX:MaxPermSize=256m -Dtimetracker.config=classpath:environment.properties</extraJvmArgs>
+              <runTarget>TimeTracker.html</runTarget>
               <port>${hosted.port}</port>
               <hostedWebapp>${gwt.war}</hostedWebapp>
               <module>${gwt.module.name}</module>
@@ -120,12 +120,12 @@
                   <directory>src/main/webapp</directory>
                   <includes>
                     <include>**/*.css</include>
-                    <include>**/TimeManager.html</include>
+                    <include>**/TimeTracker.html</include>
                   </includes>
                 </resource>
                 <resource>
                   <filtering>false</filtering>
-                  <directory>${project.build.directory}/extra/by.chronology.web.TimeManager</directory>
+                  <directory>${project.build.directory}/${project.build.finalName}/${gwt.module.name}</directory>
                   <includes>
                     <include>**/*.symbolMap</include>
                   </includes>
@@ -181,7 +181,7 @@
             <phase>initialize</phase>
             <configuration>
               <tasks>
-                <delete includeEmptyDirs="true" dir="${gwt.webapp}/by.chronology.web.TimeManager" />
+                <delete includeEmptyDirs="true" dir="${gwt.webapp}/by.chronology.web.client.TimeTracker" />
               </tasks>
             </configuration>
             <goals>
@@ -197,12 +197,10 @@
 
   <dependencies>
 
-  	<dependency>
+  	  <dependency>
         <groupId>com.google.gwt</groupId>
         <artifactId>gwt-dev</artifactId>
         <version>${gwt.version}</version>
-        <classifier>no-commons-collections</classifier>
-        <scope>test</scope>
       </dependency>
 
       <dependency>
@@ -219,11 +217,11 @@
       </dependency>
 
       <dependency>
-        <groupId>com.googlecode.gwt.inject</groupId> 
+        <groupId>com.google.gwt.inject</groupId>
         <artifactId>gin</artifactId> 
         <version>${gin.version}</version> 
       </dependency>
 
-  </dependencied>
+  </dependencies>
 
 </project>
