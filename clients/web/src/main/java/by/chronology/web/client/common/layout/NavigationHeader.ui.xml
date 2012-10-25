@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <g:HTMLPanel>
+    <ul id="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Our Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Link Example</a></li>
+    </ul>
+  </g:HTMLPanel>
+
+</ui:UiBinder>

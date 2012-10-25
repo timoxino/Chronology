@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <g:HTMLPanel>
+    <a href="#"><img src="images/home.jpg" alt="Home"/></a>
+    <a href="#"><img src="images/mail.jpg" alt="Mail"/></a>
+    <a href="#"><img src="images/secure.jpg" alt="Support"/></a>
+  </g:HTMLPanel>
+
+</ui:UiBinder>

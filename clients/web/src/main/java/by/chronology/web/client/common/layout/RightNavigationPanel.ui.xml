@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <g:HTMLPanel>
+    <h4>CATEGORIES</h4>
+    <ul>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+      <li><a href="#">Example Link</a></li>
+    </ul>
+  </g:HTMLPanel>
+
+</ui:UiBinder>
