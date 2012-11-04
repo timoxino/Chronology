@@ -17,6 +17,7 @@
   <modules>
 
     <module>util</module>
+    <module>data-access</module>
 
   </modules>
 
