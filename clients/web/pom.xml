@@ -10,7 +10,7 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <groupId>by.chronology</groupId>
+  <groupId>by.chronology.web</groupId>
   <artifactId>web</artifactId>
   <name>CHR : Clients : Web</name>
   <packaging>war</packaging>
