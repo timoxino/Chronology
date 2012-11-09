@@ -1,6 +1,6 @@
 package by.chronology.core.dao;
 
-import by.chronology.common.dao.GenericDao;
+import by.chronology.common.dao.GenericDaoImpl;
 import by.chronology.core.model.TimeTag;
 
 /**
@@ -9,7 +9,7 @@ import by.chronology.core.model.TimeTag;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/4/12
  */
-public class TimeTagDaoImpl extends GenericDao<TimeTag> implements TimeTagDao
+public class TimeTagDaoImpl extends GenericDaoImpl<TimeTag> implements TimeTagDao
 {
     /**
      * Instantiate DAO based on <code>class</code>.

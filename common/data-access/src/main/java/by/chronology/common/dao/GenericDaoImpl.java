@@ -14,7 +14,7 @@ import java.util.List;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/4/12
  */
-public class GenericDao<T>
+public class GenericDaoImpl<T>
 {
     @Resource
     protected SessionFactory sessionFactory;
@@ -26,7 +26,7 @@ public class GenericDao<T>
      * @param c1ass
      *      Class will be used by DAO
      */
-    public GenericDao(Class<T> c1ass)
+    public GenericDaoImpl(Class<T> c1ass)
     {
         this.c1ass = c1ass;
     }
