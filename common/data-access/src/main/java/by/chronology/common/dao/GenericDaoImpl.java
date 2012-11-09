@@ -2,9 +2,9 @@ package by.chronology.common.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
-import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class GenericDaoImpl<T> implements  GenericDao<T>
 {
-    @Resource
+    @Autowired
     protected SessionFactory sessionFactory;
     protected Class<T> c1ass;
 
