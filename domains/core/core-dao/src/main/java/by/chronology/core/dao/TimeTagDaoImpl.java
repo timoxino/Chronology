@@ -9,7 +9,7 @@ import by.chronology.core.model.TimeTag;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/4/12
  */
-public class TimeTagDaoImpl extends GenericDao<TimeTag>
+public class TimeTagDaoImpl extends GenericDao<TimeTag> implements TimeTagDao
 {
     /**
      * Instantiate DAO based on <code>class</code>.
