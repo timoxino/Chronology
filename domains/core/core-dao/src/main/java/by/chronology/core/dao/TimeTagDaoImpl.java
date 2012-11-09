@@ -12,12 +12,10 @@ import by.chronology.core.model.TimeTag;
 public class TimeTagDaoImpl extends GenericDaoImpl<TimeTag> implements TimeTagDao
 {
     /**
-     * Instantiate DAO based on <code>class</code>.
-     *
-     * @param c1ass Class will be used by DAO
+     * Instantiate DAO based on <code>TimeTag</code> class.
      */
-    public TimeTagDaoImpl(Class<TimeTag> c1ass)
+    public TimeTagDaoImpl()
     {
-        super(c1ass);
+        super(TimeTag.class);
     }
 }
