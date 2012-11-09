@@ -2,6 +2,7 @@ package by.chronology.core.dao;
 
 import by.chronology.common.dao.GenericDaoImpl;
 import by.chronology.core.model.TimeTag;
+import org.springframework.stereotype.Repository;
 
 /**
  * Data Access Object for manipulating with <code>TimeTag</code> objects.
@@ -9,6 +10,7 @@ import by.chronology.core.model.TimeTag;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/4/12
  */
+@Repository(value = "timeTagDao")
 public class TimeTagDaoImpl extends GenericDaoImpl<TimeTag> implements TimeTagDao
 {
     /**
