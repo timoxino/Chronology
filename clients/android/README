@@ -1,0 +1,5 @@
+For building android application with Apache Maven :
+
+1.Set environment variable ANDROID_HOME to the path of your installed Android SDK and add $ANDROID_HOME/tools as well as
+$ANDROID_HOME/platform-tools to your $PATH. (or on Windows %ANDROID_HOME%\tools and %ANDROID_HOME%\platform-tools).
+2.Make all necessary...
