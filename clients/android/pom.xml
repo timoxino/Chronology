@@ -33,7 +33,7 @@
 		<nineoldandroids.version>2.4.0</nineoldandroids.version>
 		<spring-android-rest-template.version>1.0.0.RELEASE</spring-android-rest-template.version>
 		<acra.version>4.3.0</acra.version>
-		<android.sdk.path>d:/Project/android-sdk</android.sdk.path>
+		<android.sdk.path>d:/entryP/_prj/env/android/sdk</android.sdk.path>
 	</properties>
 
 	<dependencies>
