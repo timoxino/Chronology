@@ -21,8 +21,11 @@
   </modules>
 
   <properties>
-  	<java.compliance.level>1.6</java.compliance.level>
-  	<target.build.directory>target</target.build.directory>
+    <java.compliance.level>1.6</java.compliance.level>
+    <target.build.directory>target</target.build.directory>
+    <jdbc.test.url>jdbc:mysql://localhost:3306/test</jdbc.test.url>
+    <jdbc.test.username>root</jdbc.test.username>
+    <jdbc.test.password>root</jdbc.test.password>
   </properties>
 
   <build>
@@ -73,7 +76,35 @@
       </plugin>	
 
     </plugins>
+    
+    <resources>
+      <resource>
+        <directory>src/main/filtered-resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    
+    <testResources>
+      <testResource>
+        <directory>src/test/filtered-resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
 
   </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.21</version>
+    </dependency>
+  </dependencies>
 
 </project>
