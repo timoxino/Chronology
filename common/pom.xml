@@ -16,6 +16,7 @@
 
   <modules>
 
+    <module>test</module>
     <module>util</module>
     <module>data-access</module>
 
