@@ -1,3 +1,4 @@
+import by.chronology.common.test.HibernateMappingHelper;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.junit.Test;
@@ -22,5 +23,6 @@ public class CoreModelMappingTest
     @Test
     public void testTimeTagEntity()
     {
+        HibernateMappingHelper.testHibernateMapping(sessionFactory);
     }
 }

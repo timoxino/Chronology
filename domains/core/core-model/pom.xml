@@ -18,6 +18,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>by.chronology.test</groupId>
+      <artifactId>test</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>3.6.3.Final</version>
