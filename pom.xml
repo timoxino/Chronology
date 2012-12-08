@@ -23,7 +23,7 @@
   <properties>
     <java.compliance.level>1.6</java.compliance.level>
     <target.build.directory>target</target.build.directory>
-    <jdbc.test.url>jdbc:mysql://localhost:3306/test</jdbc.test.url>
+    <jdbc.test.url>jdbc:mysql://localhost:3306</jdbc.test.url>
     <jdbc.test.username>root</jdbc.test.username>
     <jdbc.test.password>root</jdbc.test.password>
   </properties>
