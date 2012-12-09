@@ -2,6 +2,8 @@ package by.chronology.web.client.common.gin;
 
 import by.chronology.web.client.TimeTrackerController;
 import by.chronology.web.client.common.Presenter;
+import by.chronology.web.client.common.gin.provider.TimeTagServiceProvider;
+import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
 
@@ -17,5 +19,6 @@ public class TimeTrackerConfiguration extends AbstractGinModule
     protected void configure()
     {
         bind(Presenter.class).to(TimeTrackerController.class).in(Singleton.class);
+        bind(TimeTagServiceAsync.class).toProvider(TimeTagServiceProvider.class).in(Singleton.class);
     }
 }
