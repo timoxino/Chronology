@@ -10,7 +10,7 @@ import java.util.List;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/9/12
  */
-public interface TimeTagService
+public interface TimeTagBusinessService
 {
     /**
      * Returns all available time tags.

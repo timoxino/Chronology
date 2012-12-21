@@ -18,33 +18,33 @@ import static org.mockito.Mockito.when;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 12/4/12
  */
-public class TimeTagServiceImplTest
+public class TimeTagBusinessServiceImplTest
 {
-    private TimeTagServiceImpl timeTagService;
+    private TimeTagBusinessServiceImpl timeTagBusinessService;
     private List<TimeTag> timeTagsFromDao;
 
     @Before
     public void setUp() throws Exception
     {
         // service initialization
-        timeTagService = new TimeTagServiceImpl();
+        timeTagBusinessService = new TimeTagBusinessServiceImpl();
 
         // mock objects
-        timeTagService.timeTagDao = mock(TimeTagDao.class);
+        timeTagBusinessService.timeTagDao = mock(TimeTagDao.class);
 
         // stubbing
         timeTagsFromDao = Arrays.asList(new TimeTag());
-        when(timeTagService.timeTagDao.getAll()).thenReturn(timeTagsFromDao);
+        when(timeTagBusinessService.timeTagDao.getAll()).thenReturn(timeTagsFromDao);
     }
 
     @Test
     public void getAllTimeTags() throws Exception
     {
         // target service invocation
-        List<TimeTag> timeTags = timeTagService.getAllTimeTags();
+        List<TimeTag> timeTags = timeTagBusinessService.getAllTimeTags();
 
         // check expectations
-        verify(timeTagService.timeTagDao).getAll();
+        verify(timeTagBusinessService.timeTagDao).getAll();
 
         // check result values
         Assert.assertThat("Service should return all objects provided by DAO", timeTags, is(timeTagsFromDao));

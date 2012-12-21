@@ -13,8 +13,8 @@ import java.util.List;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/9/12
  */
-@Service(value = "timeTagService")
-public class TimeTagServiceImpl implements TimeTagService
+@Service(value = "timeTagBusinessService")
+public class TimeTagBusinessServiceImpl implements TimeTagBusinessService
 {
     @Autowired
     TimeTagDao timeTagDao;
