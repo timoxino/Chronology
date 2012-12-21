@@ -25,11 +25,7 @@
         <prop key="hibernate.show_sql">true</prop>
       </props>
     </property>
-    <property name="annotatedClasses">
-      <list>
-        <value>by.chronology.core.model.TimeTag</value>
-      </list>
-    </property>
+    <property name="packagesToScan" value="by.chronology.core.model" />
   </bean>
 
 </beans>
