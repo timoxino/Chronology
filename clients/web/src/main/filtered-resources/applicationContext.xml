@@ -31,4 +31,6 @@
     <property name="packagesToScan" value="by.chronology.core.model" />
   </bean>
 
+  <bean id="mapper" class="org.dozer.DozerBeanMapper" />
+
 </beans>

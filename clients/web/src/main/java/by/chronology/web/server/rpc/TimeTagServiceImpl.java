@@ -4,6 +4,7 @@ import by.chronology.core.service.TimeTagBusinessService;
 import by.chronology.web.client.model.TimeTag;
 import by.chronology.web.client.service.rpc.TimeTagService;
 import by.chronology.web.server.common.RemoteServiceSpringSupportServlet;
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -20,10 +21,23 @@ public class TimeTagServiceImpl extends RemoteServiceSpringSupportServlet implem
     @Autowired
     TimeTagBusinessService timeTagBusinessService;
 
+    @Autowired
+    DozerBeanMapper mapper;
+
     @Override
     public List<TimeTag> getAllTimeTags()
     {
-        // TODO: Temporary implementation. Should be replaced with real.
-        return new ArrayList<TimeTag>();
+        final List<by.chronology.core.model.TimeTag> timeTagsModel = timeTagBusinessService.getAllTimeTags();
+        return populateTimeTagsUI(timeTagsModel);
+    }
+
+    List<TimeTag> populateTimeTagsUI(List<by.chronology.core.model.TimeTag> timeTagsModel)
+    {
+        final ArrayList<TimeTag> timeTagsUI = new ArrayList<TimeTag>();
+        for (by.chronology.core.model.TimeTag timeTagModel : timeTagsModel)
+        {
+            timeTagsUI.add(mapper.map(timeTagModel, TimeTag.class));
+        }
+        return timeTagsUI;
     }
 }
