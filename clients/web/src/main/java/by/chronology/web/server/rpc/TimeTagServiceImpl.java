@@ -1,8 +1,10 @@
 package by.chronology.web.server.rpc;
 
+import by.chronology.core.service.TimeTagBusinessService;
 import by.chronology.web.client.model.TimeTag;
 import by.chronology.web.client.service.rpc.TimeTagService;
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import by.chronology.web.server.common.RemoteServiceSpringSupportServlet;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +15,11 @@ import java.util.List;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 12/9/12
  */
-public class TimeTagServiceImpl extends RemoteServiceServlet implements TimeTagService
+public class TimeTagServiceImpl extends RemoteServiceSpringSupportServlet implements TimeTagService
 {
+    @Autowired
+    TimeTagBusinessService timeTagBusinessService;
+
     @Override
     public List<TimeTag> getAllTimeTags()
     {
