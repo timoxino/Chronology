@@ -3,6 +3,7 @@ package by.chronology.common.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 11/4/12
  */
+@Transactional
 public class GenericDaoImpl<T> implements  GenericDao<T>
 {
     @Autowired

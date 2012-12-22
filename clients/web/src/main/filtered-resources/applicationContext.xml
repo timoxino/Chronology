@@ -8,6 +8,7 @@
   default-autowire="byName">
 
   <context:component-scan base-package="by.chronology" />
+  <tx:annotation-driven transaction-manager="transactionManager" />
 
   <bean id="dataSource" class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
     <property name="URL" value="${jdbc.test.url}" />
@@ -15,7 +16,9 @@
     <property name="password" value="${jdbc.test.password}" />
   </bean>
 
-  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager" />
+  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
 
   <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
