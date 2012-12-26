@@ -1,20 +1,23 @@
 package by.chronology.web.client.model;
 
-import by.chronology.core.model.*;
-import by.chronology.core.model.TimeTag;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+import static by.chronology.common.util.UnitTestUtils.ID;
+import static by.chronology.common.util.UnitTestUtils.NAME;
+import static by.chronology.common.util.UnitTestUtils.DESCRIPTION;
+import static by.chronology.common.util.UnitTestUtils.TAG_TIMESTAMP;
+import static by.chronology.common.util.UnitTestUtils.LAST_UPDATE_TIMESTAMP;
+
+import javax.annotation.Resource;
+
+import by.chronology.common.util.UnitTestUtils;
 import org.dozer.DozerBeanMapper;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.annotation.Resource;
-import java.sql.Timestamp;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Matchers.notNull;
+import by.chronology.core.model.TimeTag;
 
 /**
  * @author Tsimafei_Shchytkavets
@@ -23,19 +26,13 @@ import static org.mockito.Matchers.notNull;
 @ContextConfiguration(locations = "/dozerContext-test.xml")
 public class TimeTagMappingTest
 {
-    private static final Long ID = 123L;
-    private static final String NAME = "name1";
-    private static final String DESCRIPTION = "name1";
-    private static final Timestamp LAST_UPDATE_TIMESTAMP = new Timestamp(123L);
-    private static final Timestamp TAG_TIMESTAMP = new Timestamp(234L);
-
     @Resource
     DozerBeanMapper mapper;
 
     @Test
     public void convertToUI()
     {
-        final TimeTag timeTagModel = createTimeTagModel(ID, NAME, DESCRIPTION);
+        final TimeTag timeTagModel = UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION);
         final by.chronology.web.client.model.TimeTag timeTagUI = mapper.map(timeTagModel, by.chronology.web.client.model.TimeTag.class);
         checkTimeTagUI(timeTagUI);
     }
@@ -47,16 +44,5 @@ public class TimeTagMappingTest
         assertThat("Invalid mapped description", timeTagUI.getTagDescription(), is(DESCRIPTION));
         assertThat("Invalid mapped tagTimestamp", timeTagUI.getTagTimestamp(), is(TAG_TIMESTAMP));
         assertThat("Invalid mapped lastUpdateTimestamp", timeTagUI.getLastUpdateTimestamp(), is(LAST_UPDATE_TIMESTAMP));
-    }
-
-    private by.chronology.core.model.TimeTag createTimeTagModel(Long id, String name, String description)
-    {
-        by.chronology.core.model.TimeTag timeTagModel = new by.chronology.core.model.TimeTag();
-        timeTagModel.setId(id);
-        timeTagModel.setTagName(name);
-        timeTagModel.setTagDescription(description);
-        timeTagModel.setLastUpdateTimestamp(LAST_UPDATE_TIMESTAMP);
-        timeTagModel.setTagTimestamp(TAG_TIMESTAMP);
-        return timeTagModel;
     }
 }

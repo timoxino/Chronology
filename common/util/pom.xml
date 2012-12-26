@@ -15,4 +15,12 @@
   <packaging>jar</packaging>
   <description>This bundle contains JAR with util classes</description>
 
+  <dependencies>
+    <dependency>
+      <groupId>by.chronology.core</groupId>
+      <artifactId>core-model</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
 </project>

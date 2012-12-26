@@ -1,12 +1,16 @@
 package by.chronology.web.server.rpc;
 
+import static by.chronology.common.util.UnitTestUtils.ID;
+import static by.chronology.common.util.UnitTestUtils.NAME;
+import static by.chronology.common.util.UnitTestUtils.DESCRIPTION;
+
+import by.chronology.common.util.UnitTestUtils;
 import by.chronology.core.service.TimeTagBusinessService;
 import by.chronology.web.client.model.TimeTag;
 import org.dozer.DozerBeanMapper;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,19 +75,8 @@ public class TimeTagServiceImplTest
     private ArrayList<by.chronology.core.model.TimeTag> populateTimeTagsModel()
     {
         final ArrayList<by.chronology.core.model.TimeTag> timeTagsModel = new ArrayList<by.chronology.core.model.TimeTag>();
-        timeTagsModel.add(createTimeTagModel(11L, "name1", "desc1"));
-        timeTagsModel.add(createTimeTagModel(12L, "name2", "desc2"));
+        timeTagsModel.add(UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION));
+        timeTagsModel.add(UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION));
         return timeTagsModel;
-    }
-
-    private by.chronology.core.model.TimeTag createTimeTagModel(Long id, String name, String description)
-    {
-        by.chronology.core.model.TimeTag timeTagModel = new by.chronology.core.model.TimeTag();
-        timeTagModel.setId(id);
-        timeTagModel.setTagName(name);
-        timeTagModel.setTagDescription(description);
-        timeTagModel.setLastUpdateTimestamp(new Timestamp(123L));
-        timeTagModel.setTagTimestamp(new Timestamp(234L));
-        return timeTagModel;
     }
 }
