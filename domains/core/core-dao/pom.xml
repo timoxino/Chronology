@@ -20,12 +20,12 @@
     <dependency>
       <groupId>by.chronology.core</groupId>
       <artifactId>core-model</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>by.chronology.data-access</groupId>
       <artifactId>data-access</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>

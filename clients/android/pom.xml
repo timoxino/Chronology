@@ -14,7 +14,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>by.chronology.android</groupId>
 	<artifactId>android-client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>apk</packaging>
 	<name>CHR : Clients : Android</name>
 	<description>This bundle contains standalone application for Android platform</description>
