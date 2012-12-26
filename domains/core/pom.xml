@@ -18,6 +18,7 @@
   <modules>
     <module>core-model</module>
     <module>core-dao</module>
+    <module>core-service</module>
   </modules>
 
 </project>
