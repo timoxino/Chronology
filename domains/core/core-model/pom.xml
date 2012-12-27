@@ -16,6 +16,10 @@
   <packaging>jar</packaging>
   <description>This bundle contains core model</description>
 
+  <properties>
+    <javassist.version>3.12.1.GA</javassist.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>by.chronology.test</groupId>
@@ -25,33 +29,33 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>3.6.3.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.7</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>3.1.0.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>3.1.0.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>3.1.0.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>javassist</groupId>
       <artifactId>javassist</artifactId>
-      <version>3.12.1.GA</version>
+      <version>${javassist.version}</version>
     </dependency>
   </dependencies>
 

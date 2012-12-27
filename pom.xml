@@ -21,11 +21,21 @@
   </modules>
 
   <properties>
+
+    <!-- Java compilation properties -->
     <java.compliance.level>1.6</java.compliance.level>
     <target.build.directory>target</target.build.directory>
+
+    <!-- DB connection properties -->
     <jdbc.test.url>jdbc:mysql://localhost:3306</jdbc.test.url>
     <jdbc.test.username>root</jdbc.test.username>
     <jdbc.test.password>root</jdbc.test.password>
+
+    <!-- Versions of the used libraries -->
+    <spring.version>3.1.0.RELEASE</spring.version>
+    <hibernate.version>3.6.3.Final</hibernate.version>
+    <junit.version>4.7</junit.version>
+    <mockito.version>1.9.5</mockito.version>
   </properties>
 
   <build>
