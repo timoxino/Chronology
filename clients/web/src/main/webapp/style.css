@@ -46,11 +46,11 @@ a:hover, a:active {
 
 /* Header */
 #container h1 {
-	background: #FFFFFF url(images/header.jpg) no-repeat;
+	background: #FFFFFF url(images/clock_small.png) no-repeat;
 	width: 277px;
-	height: 42px;
+	height: 90px;
 	margin: 28px 0 0 18px;
-	text-indent: -9999em;
+	text-align: right;
 	float: left;
 	}
 
