@@ -4,6 +4,7 @@
 
     <!-- Other module inherits                                      -->
     <inherits name="com.google.gwt.inject.Inject"/>
+    <inherits name='com.sencha.gxt.ui.GXT'/>
 
     <!-- Specify the app entry point class. -->
     <entry-point class='by.chronology.web.client.TimeTracker'/>
