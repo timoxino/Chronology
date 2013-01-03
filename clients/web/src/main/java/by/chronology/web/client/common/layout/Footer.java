@@ -1,7 +1,11 @@
 package by.chronology.web.client.common.layout;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -13,6 +17,9 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class Footer extends Composite
 {
+    @UiField
+    Anchor homeLink;
+
     interface FooterUiBinder extends UiBinder<Widget, Footer>
     {
     }
@@ -22,5 +29,11 @@ public class Footer extends Composite
     public Footer()
     {
         initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @UiHandler("homeLink")
+    public void onHomeLinkClicked(ClickEvent event)
+    {
+        GWT.log("on home clicked");
     }
 }

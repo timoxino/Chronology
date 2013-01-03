@@ -3,14 +3,26 @@
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
   <g:HTMLPanel>
-    <div id="copyright">Copyright copy; 2007 <a href="http://www.zymic.com/free-templates/">Free Templates</a> by <a
-            href="http://www.zymic.com">Zymic</a> - <a href="http://www.zymic.com/free-web-hosting/">Free Web
-      Hosting</a> - Best Viewed in <a href="http://www.mozillafirefox.us">Mozilla Firefox</a></div>
+
+    <div id="copyright">
+      <g:Anchor href="http://timetracker.tk">2012-2013 © Time Tracker</g:Anchor>
+      -
+      by
+      <g:Anchor href="mailto:timoxino@gmail.com">timoxino</g:Anchor>
+      -
+      <g:Anchor href="http://jelastic.com">Hosting by © Jelastic</g:Anchor>
+    </div>
 
     <ul id="nav_footer">
-      <li><a href="#">Home</a> |</li>
-      <li>&nbsp;<a href="#">Contact</a> |</li>
-      <li>&nbsp;<a href="#">Support</a></li>
+      <li>
+        <g:Anchor ui:field="homeLink" href="#">Home</g:Anchor>
+      </li>
+      <li>
+        &nbsp; | &nbsp;
+      </li>
+      <li>
+        <g:Anchor href="mailto:timoxino@gmail.com">Support</g:Anchor>
+      </li>
     </ul>
   </g:HTMLPanel>
 
