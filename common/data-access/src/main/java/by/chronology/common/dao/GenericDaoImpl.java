@@ -3,6 +3,7 @@ package by.chronology.common.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
@@ -40,6 +41,7 @@ public class GenericDaoImpl<T> implements  GenericDao<T>
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public T getById(final Serializable id)
     {
         Assert.notNull(id, "ID must not be null");
@@ -47,6 +49,7 @@ public class GenericDaoImpl<T> implements  GenericDao<T>
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<T> getAll()
     {
         return getCurrentSession().createCriteria(c1ass).list();
