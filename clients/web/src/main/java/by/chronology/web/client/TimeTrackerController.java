@@ -38,16 +38,6 @@ public class TimeTrackerController implements Presenter
     @Override
     public void go(HasWidgets container)
     {
-        populateInitialLayout((RootPanel)container);
-    }
 
-    private void populateInitialLayout(RootPanel rootPanel)
-    {
-        rootPanel.get(Constants.HtmlElementId.BUTTONS_PANEL_ID).add(functionalButtonsPanel);
-        rootPanel.get(Constants.HtmlElementId.NAVIGATION_HEADER_ID).add(navigationHeader);
-        rootPanel.get(Constants.HtmlElementId.EVENTS_PANEL_ID).add(eventsPanel);
-        rootPanel.get(Constants.HtmlElementId.MAIN_CONTENT_ID).add(mainContentPanel);
-        rootPanel.get(Constants.HtmlElementId.RIGHT_NAVIGATION_ID).add(rightNavigationPanel);
-        rootPanel.get(Constants.HtmlElementId.FOOTER_ID).add(footer);
     }
 }

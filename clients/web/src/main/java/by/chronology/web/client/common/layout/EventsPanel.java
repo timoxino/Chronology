@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 10/23/12
  */
+@Deprecated
 public class EventsPanel extends Composite
 {
     interface EventsPanelUiBinder extends UiBinder<Widget, EventsPanel>
