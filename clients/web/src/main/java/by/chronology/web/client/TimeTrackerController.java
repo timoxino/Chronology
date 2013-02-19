@@ -18,24 +18,6 @@ import com.sencha.gxt.widget.core.client.container.Viewport;
 public class TimeTrackerController implements Presenter
 {
     @Inject
-    FunctionalButtonsPanel functionalButtonsPanel;
-
-    @Inject
-    NavigationHeader navigationHeader;
-
-    @Inject
-    EventsPanel eventsPanel;
-
-    @Inject
-    MainContentPanel mainContentPanel;
-
-    @Inject
-    RightNavigationPanel rightNavigationPanel;
-
-    @Inject
-    Footer footer;
-
-    @Inject
     MainLayout mainLayout;
 
     @Override
