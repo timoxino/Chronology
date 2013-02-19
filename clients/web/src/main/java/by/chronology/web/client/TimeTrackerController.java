@@ -1,12 +1,12 @@
 package by.chronology.web.client;
 
-import by.chronology.web.client.common.Constants;
 import by.chronology.web.client.common.Presenter;
 import by.chronology.web.client.common.layout.*;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.sencha.gxt.widget.core.client.container.Viewport;
 
 /**
  * Class responsible for handling application events and view navigation.
@@ -35,9 +35,14 @@ public class TimeTrackerController implements Presenter
     @Inject
     Footer footer;
 
+    @Inject
+    MainLayout mainLayout;
+
     @Override
     public void go(HasWidgets container)
     {
-
+        final Viewport viewport = new Viewport();
+        viewport.add(mainLayout.asWidget());
+        ((RootPanel)container).get().add(viewport);
     }
 }
