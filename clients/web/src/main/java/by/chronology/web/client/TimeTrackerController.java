@@ -20,11 +20,17 @@ public class TimeTrackerController implements Presenter
     @Inject
     MainLayout mainLayout;
 
+    @Inject
+    LoginPanel loginPanel;
+
     @Override
     public void go(HasWidgets container)
     {
+
         final Viewport viewport = new Viewport();
         viewport.add(mainLayout.asWidget());
         ((RootPanel)container).get().add(viewport);
+
+        mainLayout.getNavigationPanel().add(loginPanel);
     }
 }
