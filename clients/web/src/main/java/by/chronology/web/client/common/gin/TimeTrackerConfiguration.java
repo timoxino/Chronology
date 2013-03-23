@@ -3,6 +3,7 @@ package by.chronology.web.client.common.gin;
 import by.chronology.web.client.TimeTrackerPlaceHistoryMapper;
 import by.chronology.web.client.common.gin.provider.*;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
+import by.chronology.web.client.service.rpc.UserServiceAsync;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
@@ -23,6 +24,7 @@ public class TimeTrackerConfiguration extends AbstractGinModule
     protected void configure()
     {
         bind(TimeTagServiceAsync.class).toProvider(TimeTagServiceProvider.class).in(Singleton.class);
+        bind(UserServiceAsync.class).toProvider(UserServiceProvider.class).in(Singleton.class);
         bind(EventBus.class).to(SimpleEventBus.class).in(Singleton.class);
         configureActivities();
     }
