@@ -22,10 +22,18 @@
         <servlet-class>by.chronology.web.server.rpc.TimeTagServiceImpl</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>userService</servlet-name>
+        <servlet-class>by.chronology.web.server.rpc.UserServiceImpl</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>timeTagService</servlet-name>
         <url-pattern>/services/timeTagService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userService</servlet-name>
+        <url-pattern>/services/userService</url-pattern>
     </servlet-mapping>
 
 </web-app>
