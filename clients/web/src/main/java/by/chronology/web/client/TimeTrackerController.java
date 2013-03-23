@@ -1,36 +1,54 @@
 package by.chronology.web.client;
 
-import by.chronology.web.client.common.Presenter;
 import by.chronology.web.client.common.layout.*;
-import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.activity.shared.ActivityManager;
+import com.google.gwt.place.shared.PlaceController;
+import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.google.web.bindery.event.shared.EventBus;
 import com.sencha.gxt.widget.core.client.container.Viewport;
 
 /**
- * Class responsible for handling application events and view navigation.
+ * Takes a responsibility for initializing of main layout and configuring Activities/Places stuff.
  *
  * @author Tsimafei Shchytkavets
  *         Creation Date: 10/22/12
  */
 @Singleton
-public class TimeTrackerController implements Presenter
+public class TimeTrackerController
 {
     @Inject
-    MainLayout mainLayout;
-
+    EventBus eventBus;
     @Inject
-    LoginPanel loginPanel;
+    PlaceController placeController;
+    @Inject
+    ActivityManager activityManager;
+    @Inject
+    PlaceHistoryHandler historyHandler;
+    @Inject
+    MainLayoutDisplay mainLayout;
+    @Inject
+    LoginPlace defaultPlace;
 
-    @Override
-    public void go(HasWidgets container)
+    public void go()
     {
+        addMainLayout();
+        goToDefaultPlace();
+    }
 
-        final Viewport viewport = new Viewport();
-        viewport.add(mainLayout.asWidget());
-        ((RootPanel)container).get().add(viewport);
+    private void addMainLayout()
+    {
+        Viewport viewport = new Viewport();
+        viewport.add(mainLayout);
+        RootPanel.get().add(viewport);
+    }
 
-        mainLayout.getNavigationPanel().add(loginPanel);
+    private void goToDefaultPlace()
+    {
+        activityManager.setDisplay(mainLayout.getNavigationPanel());
+        historyHandler.register(placeController, eventBus, defaultPlace);
+        historyHandler.handleCurrentHistory();
     }
 }

@@ -2,7 +2,6 @@ package by.chronology.web.client.common.layout;
 
 import by.chronology.web.client.common.Constants;
 
-import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.ContentPanel;
@@ -17,12 +16,20 @@ import com.sencha.gxt.widget.core.client.container.SimpleContainer;
  * 
  * @author Tsimafei Shchytkavets Creation Date: 2/19/13
  */
-public class MainLayout implements IsWidget
+public class MainLayoutView implements MainLayoutDisplay
 {
+    private Presenter presenter;
+
     private ContentPanel navigationPanel;
     private ContentPanel headerPanel;
     private ContentPanel bodyPanel;
     private ContentPanel footerPanel;
+
+    @Override
+    public void setPresenter(Presenter presenter)
+    {
+        this.presenter = presenter;
+    }
 
     public Widget asWidget()
     {
@@ -60,21 +67,25 @@ public class MainLayout implements IsWidget
         return panel;
     }
 
+    @Override
     public ContentPanel getNavigationPanel()
     {
         return navigationPanel;
     }
 
+    @Override
     public ContentPanel getHeaderPanel()
     {
         return headerPanel;
     }
 
+    @Override
     public ContentPanel getBodyPanel()
     {
         return bodyPanel;
     }
 
+    @Override
     public ContentPanel getFooterPanel()
     {
         return footerPanel;

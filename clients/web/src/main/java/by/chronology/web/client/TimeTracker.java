@@ -3,7 +3,6 @@ package by.chronology.web.client;
 import by.chronology.web.client.common.gin.TimeTrackerInjector;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * TimeTracker Web application entry point.
@@ -18,6 +17,6 @@ public class TimeTracker implements EntryPoint
     @Override
     public void onModuleLoad()
     {
-        injector.getTimeTrackerController().go(RootPanel.get());
+        injector.getTimeTrackerController().go();
     }
 }
