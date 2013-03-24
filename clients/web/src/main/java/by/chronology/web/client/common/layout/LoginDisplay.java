@@ -27,11 +27,8 @@ public interface LoginDisplay extends IsWidget
 
         /**
          * Performs an action when registration is happening,
-         *
-         * @param userAccount
-         *          user data
          */
-        void onSignup(UserAccount userAccount);
+        void onSignup();
     }
 
     void setPresenter(Presenter presenter);

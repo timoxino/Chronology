@@ -59,6 +59,6 @@ public class LoginView extends Composite implements LoginDisplay
     @UiHandler("signup")
     public void onSignup(SelectEvent event)
     {
-        presenter.onSignup(new UserAccount());
+        presenter.onSignup();
     }
 }

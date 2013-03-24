@@ -59,7 +59,7 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     }
 
     @Override
-    public void onSignup(UserAccount userAccount)
+    public void onSignup()
     {
         // TODO: need to be implemented
     }
