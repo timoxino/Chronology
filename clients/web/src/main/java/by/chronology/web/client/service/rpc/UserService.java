@@ -1,6 +1,7 @@
 package by.chronology.web.client.service.rpc;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.model.UserContext;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -19,7 +20,7 @@ public interface UserService extends RemoteService
      * @param userAccount
      *          object contains necessary for login data (e.g. email and password).
      * @return
-     *          object contains full user info.
+     *          object contains full user info and roles.
      */
-    UserAccount login(UserAccount userAccount);
+    UserContext login(UserAccount userAccount);
 }

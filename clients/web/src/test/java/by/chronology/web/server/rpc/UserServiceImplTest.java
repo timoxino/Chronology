@@ -1,6 +1,7 @@
 package by.chronology.web.server.rpc;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.model.UserContext;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,11 +27,11 @@ public class UserServiceImplTest
         userAccount.setEmail("test@gmail.com");
         userAccount.setPassword("pass");
 
-        UserAccount account = userService.login(userAccount);
-        Assert.assertNotNull(account.getEmail());
-        Assert.assertNotNull(account.getPassword());
-        Assert.assertNotNull(account.getFirstName());
-        Assert.assertNotNull(account.getLastName());
-        Assert.assertNotNull(account.getId());
+        UserContext userContext = userService.login(userAccount);
+        Assert.assertNotNull(userContext.getUserAccount().getEmail());
+        Assert.assertNotNull(userContext.getUserAccount().getPassword());
+        Assert.assertNotNull(userContext.getUserAccount().getFirstName());
+        Assert.assertNotNull(userContext.getUserAccount().getLastName());
+        Assert.assertNotNull(userContext.getUserAccount().getId());
     }
 }

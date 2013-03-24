@@ -1,6 +1,7 @@
 package by.chronology.web.client.service.rpc;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.model.UserContext;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**
@@ -18,7 +19,7 @@ public interface UserServiceAsync
      *          object contains necessary for login data (e.g. email and password).
      *
      * @return
-     *          object contains full user info.
+     *          object contains full user info and roles.
      */
-    void login(UserAccount userAccount, AsyncCallback<UserAccount> async);
+    void login(UserAccount userAccount, AsyncCallback<UserContext> async);
 }

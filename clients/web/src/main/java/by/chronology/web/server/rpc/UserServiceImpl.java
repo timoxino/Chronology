@@ -1,6 +1,7 @@
 package by.chronology.web.server.rpc;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.model.UserContext;
 import by.chronology.web.client.service.rpc.UserService;
 import by.chronology.web.server.common.RemoteServiceSpringSupportServlet;
 
@@ -13,7 +14,7 @@ import by.chronology.web.server.common.RemoteServiceSpringSupportServlet;
 public class UserServiceImpl extends RemoteServiceSpringSupportServlet implements UserService
 {
     @Override
-    public UserAccount login(UserAccount userAccount)
+    public UserContext login(UserAccount userAccount)
     {
         // TODO: replace with real login service implementation.
         UserAccount account = new UserAccount();
@@ -22,6 +23,10 @@ public class UserServiceImpl extends RemoteServiceSpringSupportServlet implement
         account.setFirstName("Tsimafei");
         account.setLastName("Shchytkavets");
         account.setId(1234567L);
-        return account;
+
+        UserContext userContext = new UserContext();
+        userContext.setUserAccount(account);
+
+        return userContext;
     }
 }

@@ -1,6 +1,7 @@
 package by.chronology.web.client.common.layout;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.model.UserContext;
 import by.chronology.web.client.service.rpc.UserServiceAsync;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.core.client.GWT;
@@ -42,7 +43,7 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     @Override
     public void onLogin(UserAccount userAccount)
     {
-        userService.login(userAccount, new AsyncCallback<UserAccount>()
+        userService.login(userAccount, new AsyncCallback<UserContext>()
         {
             @Override
             public void onFailure(Throwable caught)
@@ -51,9 +52,9 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
             }
 
             @Override
-            public void onSuccess(UserAccount result)
+            public void onSuccess(UserContext result)
             {
-                GWT.log("Hello " + result.getFirstName());
+                GWT.log("Hello " + result.getUserAccount().getFirstName());
             }
         });
     }
