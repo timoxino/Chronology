@@ -1,5 +1,6 @@
 package by.chronology.web.client.common.layout;
 
+import by.chronology.web.client.model.UserAccount;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -41,14 +42,14 @@ public class LoginView extends Composite implements LoginDisplay
     }
 
     @UiHandler("login")
-    public void login(SelectEvent event)
+    public void onLogin(SelectEvent event)
     {
-        GWT.log("Login pressed, Login = " + loginField.getValue() + ", Password = " + passwordField.getValue());
+        presenter.onLogin(new UserAccount());
     }
 
     @UiHandler("signup")
-    public void signup(SelectEvent event)
+    public void onSignup(SelectEvent event)
     {
-        presenter.goTo(new RegistrationPlace());
+        presenter.onSignup(new UserAccount());
     }
 }
