@@ -16,6 +16,16 @@ public class UserAccount implements Serializable
     private String email;
     private String password;
 
+    public UserAccount()
+    {
+    }
+
+    public UserAccount(String email, String password)
+    {
+        this.email = email;
+        this.password = password;
+    }
+
     public Long getId()
     {
         return id;

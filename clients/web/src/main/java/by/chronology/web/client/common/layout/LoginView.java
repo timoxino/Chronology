@@ -52,7 +52,7 @@ public class LoginView extends Composite implements LoginDisplay
     {
         if (formPanel.isValid())
         {
-            presenter.onLogin(new UserAccount());
+            presenter.onLogin(new UserAccount(loginField.getValue(), passwordField.getValue()));
         }
     }
 

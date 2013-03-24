@@ -1,10 +1,13 @@
 package by.chronology.web.client.common.layout;
 
 import by.chronology.web.client.model.UserAccount;
+import by.chronology.web.client.service.rpc.UserServiceAsync;
 import com.google.gwt.activity.shared.AbstractActivity;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 
@@ -20,6 +23,8 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     LoginDisplay loginView;
     @Inject
     PlaceController placeController;
+    @Inject
+    UserServiceAsync userService;
 
     @Override
     public void start(AcceptsOneWidget panel, EventBus eventBus)
@@ -37,7 +42,20 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     @Override
     public void onLogin(UserAccount userAccount)
     {
-        // TODO: need to be implemented
+        userService.login(userAccount, new AsyncCallback<UserAccount>()
+        {
+            @Override
+            public void onFailure(Throwable caught)
+            {
+                GWT.log("login failed", caught);
+            }
+
+            @Override
+            public void onSuccess(UserAccount result)
+            {
+                GWT.log("Hello " + result.getFirstName());
+            }
+        });
     }
 
     @Override
