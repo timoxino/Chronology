@@ -18,4 +18,17 @@ public interface Constants
             public final static String FOOTER_LABEL = "Footer";
         }
     }
+
+    public interface ErrorMessage
+    {
+        public interface Validation
+        {
+            public final static String EMAIL_INVALID = "Bad e-mail address";
+        }
+    }
+
+    public interface RegExp
+    {
+        public final static String EMAIL_FORMAT = "^(\\w+)([-+.][\\w]+)*@(\\w[-\\w]*\\.){1,5}([A-Za-z]){2,4}$";
+    }
 }

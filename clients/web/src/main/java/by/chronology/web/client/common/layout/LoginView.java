@@ -1,5 +1,6 @@
 package by.chronology.web.client.common.layout;
 
+import by.chronology.web.client.common.Constants;
 import by.chronology.web.client.model.UserAccount;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -10,6 +11,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
 import com.sencha.gxt.widget.core.client.form.FormPanel;
 import com.sencha.gxt.widget.core.client.form.TextField;
+import com.sencha.gxt.widget.core.client.form.validator.RegExValidator;
 
 /**
  * Display panel with controls essential for login/sign up operation.
@@ -42,6 +44,7 @@ public class LoginView extends Composite implements LoginDisplay
     public LoginView()
     {
         initWidget(uiBinder.createAndBindUi(this));
+        loginField.addValidator(new RegExValidator(Constants.RegExp.EMAIL_FORMAT, Constants.ErrorMessage.Validation.EMAIL_INVALID));
     }
 
     @UiHandler("login")
