@@ -8,9 +8,11 @@
   </ui:with>
 
   <g:VerticalPanel>
-    <c:FramedPanel ui:field="loginForm" headerVisible="false" width="200">
 
-      <form:FieldSet ui:field="fieldSet" headingText="Sign in" collapsible="true">
+    <c:FramedPanel headerVisible="false" width="200">
+
+      <form:FormPanel ui:field="formPanel">
+      <form:FieldSet headingText="Sign in">
         <container:VerticalLayoutContainer>
           <container:child layoutData="{verticalLayoutData}">
             <form:FieldLabel text="Login" labelWidth="60">
@@ -28,6 +30,7 @@
           </container:child>
         </container:VerticalLayoutContainer>
       </form:FieldSet>
+      </form:FormPanel>
 
       <c:button>
         <button:TextButton ui:field="signup" text="Sign Up!" />
@@ -35,7 +38,9 @@
       <c:button>
         <button:TextButton ui:field="login" text="Login" />
       </c:button>
+
     </c:FramedPanel>
+
   </g:VerticalPanel>
 
 </ui:UiBinder>

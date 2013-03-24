@@ -8,6 +8,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
+import com.sencha.gxt.widget.core.client.form.FormPanel;
 import com.sencha.gxt.widget.core.client.form.TextField;
 
 /**
@@ -23,6 +24,8 @@ public class LoginView extends Composite implements LoginDisplay
     TextField loginField;
     @UiField
     TextField passwordField;
+    @UiField
+    FormPanel formPanel;
 
     @Override
     public void setPresenter(Presenter presenter)
@@ -44,7 +47,10 @@ public class LoginView extends Composite implements LoginDisplay
     @UiHandler("login")
     public void onLogin(SelectEvent event)
     {
-        presenter.onLogin(new UserAccount());
+        if (formPanel.isValid())
+        {
+            presenter.onLogin(new UserAccount());
+        }
     }
 
     @UiHandler("signup")
