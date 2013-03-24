@@ -26,9 +26,9 @@ public class RegistrationView extends Composite implements RegistrationDisplay
     @UiField
     TextField emailField;
     @UiField
-    TextField loginField;
-    @UiField
     TextField passwordField;
+    @UiField
+    TextField retypePasswordField;
     @UiField
     TextButton registerButton;
     @UiField

@@ -19,16 +19,9 @@
             <container:VerticalLayoutContainer>
 
                 <container:child layoutData="{verticalLayoutData}">
-                    <form:FieldLabel text="Email" labelWidth="75">
+                    <form:FieldLabel text="E-mail (will be used as a login)" labelWidth="75">
                         <form:widget>
                             <form:TextField ui:field="emailField" allowBlank="false" width="140"/>
-                        </form:widget>
-                    </form:FieldLabel>
-                </container:child>
-                <container:child layoutData="{verticalLayoutData}">
-                    <form:FieldLabel text="Login" labelWidth="75">
-                        <form:widget>
-                            <form:TextField ui:field="loginField" allowBlank="false" width="140"/>
                         </form:widget>
                     </form:FieldLabel>
                 </container:child>
@@ -36,6 +29,13 @@
                     <form:FieldLabel text="Password" labelWidth="75">
                         <form:widget>
                             <form:TextField ui:field="passwordField" allowBlank="false" width="140"/>
+                        </form:widget>
+                    </form:FieldLabel>
+                </container:child>
+                <container:child layoutData="{verticalLayoutData}">
+                    <form:FieldLabel text="Retype password" labelWidth="75">
+                        <form:widget>
+                            <form:TextField ui:field="retypePasswordField" allowBlank="false" width="140"/>
                         </form:widget>
                     </form:FieldLabel>
                 </container:child>
