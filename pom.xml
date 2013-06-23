@@ -18,6 +18,7 @@
     <module>common</module>
     <module>domains</module>
     <module>clients</module>
+    <module>services</module>
   </modules>
 
   <properties>
