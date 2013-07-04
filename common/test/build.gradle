@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'by.chronology.test'
+version = '0.0.1-SNAPSHOT'
+
+description = """CHR : Common : Test"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+
+
+repositories {
+        
+     mavenRepo url: "https://maven.nuxeo.org/nexus/content/groups/public/"
+     mavenRepo url: "http://repo.maven.apache.org/maven2"
+}
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
+    compile group: 'org.springframework', name: 'spring-context', version:'3.1.0.RELEASE'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
+}
