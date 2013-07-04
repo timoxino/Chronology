@@ -52,6 +52,7 @@ Thumbs.db
 # Folders #
 ######################
 target
+build
 log
 lib
 
@@ -61,5 +62,6 @@ lib
 .project
 .settings
 .metadata
+.gradle
 HREV*
 *.FDC
