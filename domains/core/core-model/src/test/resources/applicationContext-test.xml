@@ -10,9 +10,9 @@
   <context:component-scan base-package="by.chronology" />
 
   <bean id="dataSource" class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
-    <property name="URL" value="${jdbc.test.url}" />
-    <property name="user" value="${jdbc.test.username}" />
-    <property name="password" value="${jdbc.test.password}" />
+    <property name="URL" value="jdbc:mysql://localhost:3306" />
+    <property name="user" value="root" />
+    <property name="password" value="root" />
   </bean>
 
   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager" />
