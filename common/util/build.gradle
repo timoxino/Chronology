@@ -1,25 +1,14 @@
 apply plugin: 'java'
-apply plugin: 'maven'
 
 group = 'by.chronology.util'
-version = '0.0.1-SNAPSHOT'
-
+version = '1.0-SNAPSHOT'
 description = """CHR : Common : Util"""
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
-
-
-
 repositories {
-     
-     mavenRepo url: "https://maven.nuxeo.org/nexus/content/groups/public/"
-     mavenRepo url: "http://repo.maven.apache.org/maven2"
-     mavenRepo url: "file:///home/timoxino/Development/mvn_repo"
-//   mavenLocal()
+	mavenLocal()
+	mavenCentral()     
 }
 
 dependencies {
     compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
-    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
 }
