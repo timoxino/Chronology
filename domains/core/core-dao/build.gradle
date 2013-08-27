@@ -1,25 +1,16 @@
 apply plugin: 'java'
-apply plugin: 'maven'
 
 group = 'by.chronology.core'
-version = '0.0.1-SNAPSHOT'
-
+version = '1.0-SNAPSHOT'
 description = """CHR : Domains : Core : DAO"""
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
-
-
-
 repositories {
-        
-     mavenRepo url: "http://repo.maven.apache.org/maven2"
-     mavenRepo url: "file:///home/timoxino/Development/mvn_repo"
-//   mavenLocal()
+	mavenLocal()
+	mavenCentral()
 }
+
 dependencies {
     compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
     compile group: 'by.chronology.data-access', name: 'data-access', version:'0.0.1-SNAPSHOT'
     compile group: 'org.springframework', name: 'spring-context', version:'3.1.0.RELEASE'
-    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
 }
