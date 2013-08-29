@@ -1,16 +1,8 @@
-apply plugin: 'java'
-
 group = 'by.chronology.core'
-version = '1.0-SNAPSHOT'
 description = """CHR : Domains : Core : DAO"""
 
-repositories {
-	mavenLocal()
-	mavenCentral()
-}
-
 dependencies {
-    compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
-    compile group: 'by.chronology.data-access', name: 'data-access', version:'0.0.1-SNAPSHOT'
+    compile project(':common:data-access')
+    compile project(':domains:core:core-model')
     compile group: 'org.springframework', name: 'spring-context', version:'3.1.0.RELEASE'
 }

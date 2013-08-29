@@ -1,0 +1,7 @@
+include "common:data-access"
+include "common:test"
+include "common:util"
+include "domains:core:core-dao"
+include "domains:core:core-model"
+include "domains:core:core-service"
+include "services:REST"

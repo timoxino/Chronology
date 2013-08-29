@@ -1,19 +1,11 @@
-apply plugin: 'java'
-
 group = 'by.chronology.core'
-version = '1.0-SNAPSHOT'
 description = """CHR : Domains : Core : Model"""
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
-    testCompile group: 'by.chronology.test', name: 'test', version:'0.0.1-SNAPSHOT'
+    testCompile project(':common:test')
+    testCompile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
     testCompile group: 'org.springframework', name: 'spring-test', version:'3.1.0.RELEASE'
     testCompile group: 'org.springframework', name: 'spring-orm', version:'3.1.0.RELEASE'
     testCompile group: 'javassist', name: 'javassist', version:'3.12.1.GA'
-    testCompile group: 'junit', name: 'junit', version:'4.7'
 }

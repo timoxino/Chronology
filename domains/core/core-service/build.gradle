@@ -1,18 +1,8 @@
-apply plugin: 'java'
-
 group = 'by.chronology.core'
-version = '1.0-SNAPSHOT'
 description = """CHR : Domains : Core : Service"""
 
-repositories {        
-	mavenLocal()
-	mavenCentral()
-}
-
 dependencies {
-    compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
-    compile group: 'by.chronology.core', name: 'core-dao', version:'0.0.1-SNAPSHOT'
+    compile project(':domains:core:core-model')
+    compile project(':domains:core:core-dao')
     compile group: 'org.springframework', name: 'spring-context', version:'3.1.0.RELEASE'
-    testCompile group: 'junit', name: 'junit', version:'4.7'
-    testCompile group: 'org.mockito', name: 'mockito-all', version:'1.9.5'
 }

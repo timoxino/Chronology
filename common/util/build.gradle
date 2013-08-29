@@ -1,14 +1,6 @@
-apply plugin: 'java'
-
 group = 'by.chronology.util'
-version = '1.0-SNAPSHOT'
 description = """CHR : Common : Util"""
 
-repositories {
-	mavenLocal()
-	mavenCentral()     
-}
-
 dependencies {
-    compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
+    compile project(':domains:core:core-model')
 }

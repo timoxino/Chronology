@@ -1,18 +1,8 @@
-apply plugin: 'java'
-
 group = 'by.chronology.data-access'
-version = '1.0-SNAPSHOT'
 description = """CHR : Common : Data-Access"""
-
-repositories {
-	mavenLocal()
-	mavenCentral()
-}
 
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
     compile group: 'org.springframework', name: 'spring-context', version:'3.1.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-orm', version:'3.1.0.RELEASE'
-    testCompile group: 'junit', name: 'junit', version:'4.7'
-    testCompile group: 'org.mockito', name: 'mockito-all', version:'1.9.5'
 }

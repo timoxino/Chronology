@@ -1,13 +1,5 @@
-apply plugin: 'java'
-
 group = 'by.chronology.test'
-version = '1.0-SNAPSHOT'
 description = """CHR : Common : Test"""
-
-repositories {
-    mavenLocal()
-	mavenCentral()
-}
 
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
