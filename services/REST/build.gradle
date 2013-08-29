@@ -1,18 +1,12 @@
 apply plugin: 'java'
-apply plugin: 'maven'
 
 group = 'by.chronology.service.rest'
-version = '0.0.1-SNAPSHOT'
-
+version = '1.0-SNAPSHOT'
 description = """CHR : Service : REST"""
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
-
 repositories {
-        
-     mavenRepo url: "http://repo.maven.apache.org/maven2"
      mavenLocal()
+     mavenCentral()
 }
 
 dependencies {
@@ -23,5 +17,4 @@ dependencies {
     compile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
     compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version:'1.9.12'
     compile group: 'by.chronology.core', name: 'core-model', version:'0.0.1-SNAPSHOT'
-    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
 }
