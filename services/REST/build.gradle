@@ -1,3 +1,5 @@
+apply plugin: "war"
+
 group = 'by.chronology.service.rest'
 description = """CHR : Service : REST"""
 
