@@ -4,7 +4,6 @@ import by.chronology.web.client.TimeTrackerPlaceHistoryMapper;
 import by.chronology.web.client.common.gin.provider.*;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
 import by.chronology.web.client.service.rpc.UserServiceAsync;
-import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
@@ -32,7 +31,6 @@ public class TimeTrackerConfiguration extends AbstractGinModule
     private void configureActivities()
     {
         bind(PlaceController.class).toProvider(PlaceControllerProvider.class).in(Singleton.class);
-        bind(ActivityManager.class).toProvider(ActivityManagerProvider.class).in(Singleton.class);
         bind(TimeTrackerPlaceHistoryMapper.class).toProvider(TimeTrackerPlaceHistoryMapperProvider.class).in(Singleton.class);
         bind(PlaceHistoryHandler.class).toProvider(PlaceHistoryHandlerProvider.class).in(Singleton.class);
     }

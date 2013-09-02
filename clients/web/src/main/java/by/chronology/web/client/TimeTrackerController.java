@@ -2,6 +2,7 @@ package by.chronology.web.client;
 
 import by.chronology.web.client.common.layout.*;
 import com.google.gwt.activity.shared.ActivityManager;
+import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -24,13 +25,20 @@ public class TimeTrackerController
     @Inject
     PlaceController placeController;
     @Inject
-    ActivityManager activityManager;
-    @Inject
     PlaceHistoryHandler historyHandler;
     @Inject
     MainLayoutDisplay mainLayout;
     @Inject
     LoginPlace defaultPlace;
+
+    @Inject
+    HeaderActivityMapper headerActivityMapper;
+    @Inject
+    NavigationActivityMapper navigationActivityMapper;
+    @Inject
+    BodyActivityMapper bodyActivityMapper;
+    @Inject
+    FooterActivityMapper footerActivityMapper;
 
     public void go()
     {
@@ -47,8 +55,17 @@ public class TimeTrackerController
 
     private void goToDefaultPlace()
     {
-        activityManager.setDisplay(mainLayout.getNavigationPanel());
+        createActivityManager(headerActivityMapper).setDisplay(mainLayout.getHeaderPanel());
+        createActivityManager(navigationActivityMapper).setDisplay(mainLayout.getNavigationPanel());
+        createActivityManager(bodyActivityMapper).setDisplay(mainLayout.getBodyPanel());
+        createActivityManager(footerActivityMapper).setDisplay(mainLayout.getFooterPanel());
+
         historyHandler.register(placeController, eventBus, defaultPlace);
         historyHandler.handleCurrentHistory();
+    }
+
+    private ActivityManager createActivityManager(ActivityMapper activityMapper)
+    {
+        return new ActivityManager(activityMapper, eventBus);
     }
 }
