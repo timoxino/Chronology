@@ -1,3 +1,5 @@
+rootProject.name = "Chronology"
+
 include "common:data-access"
 include "common:test"
 include "common:util"
