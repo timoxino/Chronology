@@ -4,19 +4,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 >
-    <parent>
-    	<groupId>by.chronology</groupId>
-    	<artifactId>clients</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    	<relativePath>../pom.xml</relativePath>
-    </parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>by.chronology.android</groupId>
-	<artifactId>android-client</artifactId>
-	<packaging>apk</packaging>
-	<name>CHR : Clients : Android</name>
-	<description>This bundle contains standalone application for Android platform</description>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>by.chronology.android</groupId>
+  <artifactId>android-client</artifactId>
+  <version>1.0</version>
+  <packaging>apk</packaging>
+  <name>CHR : Clients : Android</name>
+  <description>This bundle contains standalone application for Android platform</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
