@@ -2,21 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <groupId>by.chronology</groupId>
-    <artifactId>clients</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
-  </parent>
-
+  
   <groupId>by.chronology.web</groupId>
   <artifactId>web</artifactId>
   <name>CHR : Clients : Web</name>
+  <version>1.0</version>
   <packaging>war</packaging>
   <description>This bundle contains GWT web application</description>
 
   <properties>
+
+    <java.compliance.level>1.6</java.compliance.level>
+    <target.build.directory>target</target.build.directory>
+
+    <!-- Versions of the used libraries -->
+    <spring.version>3.1.0.RELEASE</spring.version>
+    <hibernate.version>3.6.3.Final</hibernate.version>
+    <junit.version>4.7</junit.version>
+    <mockito.version>1.9.5</mockito.version>
+
     <!-- Versions of the used libraries -->
     <gwtVersion>2.4.0</gwtVersion>
     <gin.version>1.5.0</gin.version>
@@ -132,10 +136,54 @@
   </dependencies>
 
   <build>
+
+    <directory>${target.build.directory}</directory>
     <!-- Generate compiled stuff in the folder used for developing mode -->
     <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 
+    <pluginManagement>
+
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+            <useDefaultDelimiters>false</useDefaultDelimiters>
+            <delimiters>
+              <delimiter>${*}</delimiter>
+            </delimiters>
+          </configuration>
+        </plugin>
+
+      </plugins>
+
+    </pluginManagement>
+
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <compilerVersion>${java.compliance.level}</compilerVersion>
+          <source>${java.compliance.level}</source>
+          <target>${java.compliance.level}</target>
+          <fork>true</fork>
+          <meminitial>128m</meminitial>
+          <maxmem>1024m</maxmem>
+          <showDeprecation>true</showDeprecation>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
 
       <!-- GWT Maven Plugin -->
       <plugin>
@@ -197,7 +245,29 @@
           <!-- <scanIntervalSeconds>1</scanIntervalSeconds> -->
         </configuration>
       </plugin>
+
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/filtered-resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    
+    <testResources>
+      <testResource>
+        <directory>src/test/filtered-resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
   </build>
 
 </project>
