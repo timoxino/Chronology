@@ -30,6 +30,7 @@
     <gin.version>1.5.0</gin.version>
     <dozer.version>5.4.0</dozer.version>
     <sencha.version>3.0.0</sencha.version>
+    <gwt.bootstrap.version>2.3.2.0-SNAPSHOT</gwt.bootstrap.version>
 
     <!-- GWT needs at least java 1.5 -->
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -59,6 +60,11 @@
       <groupId>com.sencha.gxt</groupId>
       <artifactId>gxt</artifactId>
       <version>${sencha.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.gwtbootstrap</groupId>
+      <artifactId>gwt-bootstrap</artifactId>
+      <version>${gwt.bootstrap.version}</version>
     </dependency>
 
     <dependency>
