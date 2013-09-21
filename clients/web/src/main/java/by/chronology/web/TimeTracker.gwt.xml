@@ -1,14 +1,14 @@
 <module>
-    <!-- Inherit the core Web Toolkit stuff.                        -->
-    <inherits name='com.google.gwt.user.User'/>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
 
-    <!-- Other module inherits                                      -->
-    <inherits name="com.google.gwt.activity.Activity"/>
-    <inherits name="com.google.gwt.place.Place"/>
-    <inherits name="com.google.gwt.inject.Inject"/>
-    <inherits name='com.sencha.gxt.ui.GXT'/>
-    <inherits name="com.github.gwtbootstrap.Bootstrap"/>
+  <!-- Other module inherits                                      -->
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
+  <inherits name="com.google.gwt.inject.Inject"/>
+  <inherits name="com.sencha.gxt.ui.GXT"/>
+  <inherits name="com.github.gwtbootstrap.Bootstrap"/>
 
-    <!-- Specify the app entry point class. -->
-    <entry-point class='by.chronology.web.client.TimeTracker'/>
+  <!-- Specify the app entry point class. -->
+  <entry-point class='by.chronology.web.client.TimeTracker'/>
 </module>
