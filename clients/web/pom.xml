@@ -12,6 +12,9 @@
 
   <properties>
 
+    <jdbc.test.url>jdbc:mysql://localhost:3306</jdbc.test.url>
+    <jdbc.test.username>root</jdbc.test.username>
+    <jdbc.test.password>root</jdbc.test.password>
     <java.compliance.level>1.6</java.compliance.level>
     <target.build.directory>target</target.build.directory>
 
@@ -20,6 +23,7 @@
     <hibernate.version>3.6.3.Final</hibernate.version>
     <junit.version>4.7</junit.version>
     <mockito.version>1.9.5</mockito.version>
+    <javassist.version>3.12.1.GA</javassist.version>
 
     <!-- Versions of the used libraries -->
     <gwtVersion>2.4.0</gwtVersion>
@@ -57,6 +61,11 @@
       <version>${sencha.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.21</version>
+    </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
@@ -101,6 +110,26 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>${javassist.version}</version>
     </dependency>
 
     <!-- Mapping framework that recursively copies data from one object to another. -->
