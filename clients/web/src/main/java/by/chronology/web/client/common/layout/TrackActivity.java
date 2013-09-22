@@ -8,19 +8,21 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 
 /**
- * Control main layout with a life cycle managed by an ActivityManager.
- *
+ * Control 'Track panel' with a life cycle managed by an ActivityManager.
+ * 
  * @author Tsimafei Shchytkavets
- *         Creation Date: 3/2/13
  */
-public class MainLayoutActivity extends AbstractActivity
+public class TrackActivity extends AbstractActivity
 {
+    @Inject
+    TrackView trackView;
     @Inject
     PlaceController placeController;
 
     @Override
     public void start(AcceptsOneWidget panel, EventBus eventBus)
     {
+        panel.setWidget(trackView.asWidget());
     }
 
     public void goTo(Place place)

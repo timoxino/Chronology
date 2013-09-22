@@ -1,14 +1,11 @@
 package by.chronology.web.client.common.layout;
 
-import by.chronology.web.client.model.UserAccount;
-import by.chronology.web.client.model.UserContext;
 import by.chronology.web.client.service.rpc.UserServiceAsync;
+
 import com.google.gwt.activity.shared.AbstractActivity;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 
@@ -18,10 +15,10 @@ import com.google.inject.Inject;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 3/2/13
  */
-public class LoginActivity extends AbstractActivity implements LoginDisplay.Presenter
+public class LoginActivity extends AbstractActivity// implements LoginDisplay.Presenter
 {
-    @Inject
-    LoginDisplay loginView;
+    //@Inject
+    //LoginDisplay trackView;
     @Inject
     PlaceController placeController;
     @Inject
@@ -30,17 +27,17 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     @Override
     public void start(AcceptsOneWidget panel, EventBus eventBus)
     {
-        loginView.setPresenter(this);
-        panel.setWidget(loginView.asWidget());
+        //trackView.setPresenter(this);
+        //panel.setWidget(trackView.asWidget());
     }
 
-    @Override
+    //@Override
     public void goTo(Place place)
     {
         placeController.goTo(place);
     }
 
-    @Override
+    /*@Override
     public void onLogin(UserAccount userAccount)
     {
         userService.login(userAccount, new AsyncCallback<UserContext>()
@@ -63,5 +60,5 @@ public class LoginActivity extends AbstractActivity implements LoginDisplay.Pres
     public void onSignup()
     {
         // TODO: need to be implemented
-    }
+    }*/
 }

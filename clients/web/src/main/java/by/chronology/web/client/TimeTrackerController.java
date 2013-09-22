@@ -9,7 +9,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.web.bindery.event.shared.EventBus;
-import com.sencha.gxt.widget.core.client.container.Viewport;
 
 /**
  * Takes a responsibility for initializing of main layout and configuring Activities/Places stuff.
@@ -27,18 +26,16 @@ public class TimeTrackerController
     @Inject
     PlaceHistoryHandler historyHandler;
     @Inject
-    MainLayoutDisplay mainLayout;
+    StartPlace startPlace;
     @Inject
-    LoginPlace defaultPlace;
+    LayoutView layoutView;
 
     @Inject
     HeaderActivityMapper headerActivityMapper;
     @Inject
-    NavigationActivityMapper navigationActivityMapper;
+    LoginActivityMapper loginActivityMapper;
     @Inject
     BodyActivityMapper bodyActivityMapper;
-    @Inject
-    FooterActivityMapper footerActivityMapper;
 
     public void go()
     {
@@ -48,19 +45,16 @@ public class TimeTrackerController
 
     private void addMainLayout()
     {
-        Viewport viewport = new Viewport();
-        viewport.add(mainLayout);
-        RootPanel.get().add(viewport);
+        RootPanel.get().add(layoutView);
     }
 
     private void goToDefaultPlace()
     {
-        createActivityManager(headerActivityMapper).setDisplay(mainLayout.getHeaderPanel());
-        createActivityManager(navigationActivityMapper).setDisplay(mainLayout.getNavigationPanel());
-        createActivityManager(bodyActivityMapper).setDisplay(mainLayout.getBodyPanel());
-        createActivityManager(footerActivityMapper).setDisplay(mainLayout.getFooterPanel());
+        createActivityManager(headerActivityMapper).setDisplay(layoutView.getLogoPanel());
+        createActivityManager(loginActivityMapper).setDisplay(layoutView.getLoginPanel());
+        createActivityManager(bodyActivityMapper).setDisplay(layoutView.getBodyPanel());
 
-        historyHandler.register(placeController, eventBus, defaultPlace);
+        historyHandler.register(placeController, eventBus, startPlace);
         historyHandler.handleCurrentHistory();
     }
 

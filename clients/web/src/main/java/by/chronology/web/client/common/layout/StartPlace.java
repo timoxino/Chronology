@@ -10,22 +10,22 @@ import com.google.gwt.place.shared.Prefix;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 3/2/13
  */
-public class LoginPlace extends Place
+public class StartPlace extends Place
 {
-    public final static String LOGIN_PANEL_TOKEN = "login_panel";
+    public final static String LOGIN_PANEL_TOKEN = "start";
 
     @Prefix(LOGIN_PANEL_TOKEN)
-    public static class Tokenizer implements PlaceTokenizer<LoginPlace>
+    public static class Tokenizer implements PlaceTokenizer<StartPlace>
     {
 
         @Override
-        public LoginPlace getPlace(String token)
+        public StartPlace getPlace(String token)
         {
-            return new LoginPlace();
+            return new StartPlace();
         }
 
         @Override
-        public String getToken(LoginPlace place)
+        public String getToken(StartPlace place)
         {
             return "";
         }

@@ -13,21 +13,16 @@ import com.google.inject.Inject;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 3/2/13
  */
-public class RegistrationActivity extends AbstractActivity implements RegistrationDisplay.Presenter
+public class RegistrationActivity extends AbstractActivity
 {
-    @Inject
-    RegistrationDisplay registrationView;
     @Inject
     PlaceController placeController;
 
     @Override
     public void start(AcceptsOneWidget panel, EventBus eventBus)
     {
-        registrationView.setPresenter(this);
-        panel.setWidget(registrationView.asWidget());
     }
 
-    @Override
     public void goTo(Place place)
     {
         placeController.goTo(place);
