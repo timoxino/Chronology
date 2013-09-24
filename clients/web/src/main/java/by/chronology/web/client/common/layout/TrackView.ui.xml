@@ -12,7 +12,7 @@
           <b:Controls>
             <b:InputAddOn>
               <b:TextBox ui:field="actionDescriptionField" placeholder="description"/>
-              <b:Button ui:field="trackButton" addStyleNames="btn">Track!</b:Button>
+              <b:Button ui:field="trackButton" size="MINI" type="INFO">Track!</b:Button>
             </b:InputAddOn>
           </b:Controls>
         </b:ControlGroup>
