@@ -24,4 +24,11 @@ public class TimeTagBusinessServiceImpl implements TimeTagBusinessService
     {
         return timeTagDao.getAll();
     }
+
+    @Override
+    public TimeTag createTimeTag(TimeTag timeTag)
+    {
+        timeTagDao.save(timeTag);
+        return timeTag;
+    }
 }

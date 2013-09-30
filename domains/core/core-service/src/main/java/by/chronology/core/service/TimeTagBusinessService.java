@@ -19,4 +19,12 @@ public interface TimeTagBusinessService
      *      list of time tags
      */
     List<TimeTag> getAllTimeTags();
+
+    /**
+     * Create new time tag entity and store in database.
+     *
+     * @param timeTag entity need to be saved
+     * @return stored entity
+     */
+    TimeTag createTimeTag(TimeTag timeTag);
 }

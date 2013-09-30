@@ -49,4 +49,19 @@ public class TimeTagBusinessServiceImplTest
         // check result values
         Assert.assertThat("Service should return all objects provided by DAO", timeTags, is(timeTagsFromDao));
     }
+
+    @Test
+    public void createTimeTag()
+    {
+        final TimeTag timeTag = new TimeTag();
+
+        // target service invocation
+        final TimeTag result = timeTagBusinessService.createTimeTag(timeTag);
+
+        // check expectations
+        verify(timeTagBusinessService.timeTagDao).save(timeTag);
+
+        // check result values
+        Assert.assertThat("Service should return all objects provided by DAO", result, is(timeTag));
+    }
 }
