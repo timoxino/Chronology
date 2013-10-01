@@ -16,6 +16,13 @@ import java.util.List;
 public interface TimeTagService extends RemoteService
 {
     /**
+     * Updates time tag or creates new one if doesn't exist.
+     *
+     * @param timeTag entity need to be updated or created.
+     */
+    void updateTimeTag(TimeTag timeTag);
+
+    /**
      * Returns all available time tags.
      *
      * @return

@@ -25,6 +25,19 @@ public class TimeTagServiceImpl extends RemoteServiceSpringSupportServlet implem
     DozerBeanMapper mapper;
 
     @Override
+    public void updateTimeTag(TimeTag timeTag)
+    {
+        if (timeTag.getId() == null)
+        {
+            timeTagBusinessService.createTimeTag(mapper.map(timeTag, by.chronology.core.model.TimeTag.class));
+        }
+        else
+        {
+            // TODO: update functionality will be implemented later
+        }
+    }
+
+    @Override
     public List<TimeTag> getAllTimeTags()
     {
         final List<by.chronology.core.model.TimeTag> timeTagsModel = timeTagBusinessService.getAllTimeTags();

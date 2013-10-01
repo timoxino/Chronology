@@ -14,6 +14,13 @@ import java.util.List;
 public interface TimeTagServiceAsync
 {
     /**
+     * Updates time tag or creates new one if doesn't exist.
+     *
+     * @param timeTag entity need to be updated or created.
+     */
+    void updateTimeTag(TimeTag timeTag, AsyncCallback<Void> callback);
+
+    /**
      * Returns all available time tags.
      */
     void getAllTimeTags(AsyncCallback<List<TimeTag>> callback);
