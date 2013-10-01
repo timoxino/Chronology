@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.place;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;

@@ -1,6 +1,7 @@
 package by.chronology.web.client;
 
 import by.chronology.web.client.common.layout.*;
+import by.chronology.web.client.place.StartPlace;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.PlaceController;

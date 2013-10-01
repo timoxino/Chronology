@@ -1,6 +1,6 @@
 package by.chronology.web.client;
 
-import by.chronology.web.client.common.layout.StartPlace;
+import by.chronology.web.client.place.StartPlace;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
 
