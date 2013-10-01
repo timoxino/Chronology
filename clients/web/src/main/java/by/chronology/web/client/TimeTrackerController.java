@@ -32,9 +32,13 @@ public class TimeTrackerController
     LayoutView layoutView;
 
     @Inject
-    HeaderActivityMapper headerActivityMapper;
+    LogoActivityMapper logoActivityMapper;
+    @Inject
+    NotificationActivityMapper notificationActivityMapper;
     @Inject
     LoginActivityMapper loginActivityMapper;
+    @Inject
+    ActionsActivityMapper actionsActivityMapper;
     @Inject
     BodyActivityMapper bodyActivityMapper;
 
@@ -51,8 +55,10 @@ public class TimeTrackerController
 
     private void goToDefaultPlace()
     {
-        createActivityManager(headerActivityMapper).setDisplay(layoutView.getLogoPanel());
+        createActivityManager(logoActivityMapper).setDisplay(layoutView.getLogoPanel());
+        createActivityManager(notificationActivityMapper).setDisplay(layoutView.getNotificationPanel());
         createActivityManager(loginActivityMapper).setDisplay(layoutView.getLoginPanel());
+        createActivityManager(actionsActivityMapper).setDisplay(layoutView.getActionsPanel());
         createActivityManager(bodyActivityMapper).setDisplay(layoutView.getBodyPanel());
 
         historyHandler.register(placeController, eventBus, startPlace);

@@ -17,7 +17,11 @@ public class LayoutView extends Composite
     @UiField
     SimplePanel logoPanel;
     @UiField
+    SimplePanel notificationPanel;
+    @UiField
     SimplePanel loginPanel;
+    @UiField
+    SimplePanel actionsPanel;
     @UiField
     SimplePanel bodyPanel;
 
@@ -38,9 +42,19 @@ public class LayoutView extends Composite
         return logoPanel;
     }
 
+    public SimplePanel getNotificationPanel()
+    {
+        return notificationPanel;
+    }
+
     public SimplePanel getLoginPanel()
     {
         return loginPanel;
+    }
+
+    public SimplePanel getActionsPanel()
+    {
+        return actionsPanel;
     }
 
     public SimplePanel getBodyPanel()

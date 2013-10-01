@@ -6,11 +6,20 @@
   <g:FlowPanel>
 
     <b:Row>
-      <b:Column size="8">
+      <b:Column size="4">
         <g:SimplePanel ui:field="logoPanel"/>
       </b:Column>
       <b:Column size="4">
+        <g:SimplePanel ui:field="notificationPanel"/>
+      </b:Column>
+      <b:Column size="4">
         <g:SimplePanel ui:field="loginPanel"/>
+      </b:Column>
+    </b:Row>
+
+    <b:Row>
+      <b:Column size="12">
+        <g:SimplePanel ui:field="actionsPanel"/>
       </b:Column>
     </b:Row>
 
