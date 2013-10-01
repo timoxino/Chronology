@@ -1,8 +1,6 @@
 package by.chronology.web.client;
 
 import by.chronology.web.client.common.layout.StartPlace;
-import by.chronology.web.client.common.layout.MainLayoutPlace;
-import by.chronology.web.client.common.layout.RegistrationPlace;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
 
@@ -12,7 +10,7 @@ import com.google.gwt.place.shared.WithTokenizers;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 3/2/13
  */
-@WithTokenizers({MainLayoutPlace.Tokenizer.class, StartPlace.Tokenizer.class, RegistrationPlace.Tokenizer.class})
+@WithTokenizers({StartPlace.Tokenizer.class})
 public interface TimeTrackerPlaceHistoryMapper extends PlaceHistoryMapper
 {
 }
