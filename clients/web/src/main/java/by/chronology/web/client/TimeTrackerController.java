@@ -1,6 +1,7 @@
 package by.chronology.web.client;
 
 import by.chronology.web.client.common.layout.*;
+import by.chronology.web.client.event.ShowAlertEvent;
 import by.chronology.web.client.place.StartPlace;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
@@ -30,6 +31,8 @@ public class TimeTrackerController
     StartPlace startPlace;
     @Inject
     LayoutView layoutView;
+    @Inject
+    NotificationActivity notificationActivity;
 
     @Inject
     LogoActivityMapper logoActivityMapper;
@@ -44,6 +47,7 @@ public class TimeTrackerController
 
     public void go()
     {
+        eventBus.addHandler(ShowAlertEvent.TYPE, notificationActivity);
         addMainLayout();
         goToDefaultPlace();
     }
