@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.logo;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;

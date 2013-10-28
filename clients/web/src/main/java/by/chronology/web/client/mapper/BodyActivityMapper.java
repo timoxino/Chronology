@@ -1,30 +1,29 @@
-package by.chronology.web.client;
+package by.chronology.web.client.mapper;
 
-import by.chronology.web.client.common.layout.LoginActivity;
 import by.chronology.web.client.place.StartPlace;
-
+import by.chronology.web.client.track.TrackActivity;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.google.inject.Inject;
 
 /**
- * Finds the activities to run for a login panel.
+ * Finds the activities to run for a body.
  *
  * @author Tsimafei Shchytkavets
  *         Creation Date: 3/2/13
  */
-public class LoginActivityMapper implements ActivityMapper
+public class BodyActivityMapper implements ActivityMapper
 {
     @Inject
-    LoginActivity loginActivity;
+    TrackActivity trackActivity;
 
     @Override
     public Activity getActivity(Place place)
     {
         if (place instanceof StartPlace)
         {
-            return loginActivity;
+            return trackActivity;
         }
         return null;
     }

@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.notification;
 
 import com.google.gwt.i18n.client.Messages;
 

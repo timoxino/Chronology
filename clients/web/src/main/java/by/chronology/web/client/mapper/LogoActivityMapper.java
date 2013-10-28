@@ -1,6 +1,6 @@
-package by.chronology.web.client;
+package by.chronology.web.client.mapper;
 
-import by.chronology.web.client.common.layout.LogoActivity;
+import by.chronology.web.client.logo.LogoActivity;
 import by.chronology.web.client.place.StartPlace;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;

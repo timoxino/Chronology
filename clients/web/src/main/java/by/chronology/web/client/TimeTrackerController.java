@@ -1,8 +1,8 @@
 package by.chronology.web.client;
 
-import by.chronology.web.client.common.layout.NotificationActivity;
 import by.chronology.web.client.event.ShowAlertEvent;
 
+import by.chronology.web.client.notification.NotificationActivity;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.web.bindery.event.shared.EventBus;

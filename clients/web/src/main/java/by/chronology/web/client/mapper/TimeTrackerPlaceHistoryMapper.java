@@ -1,4 +1,4 @@
-package by.chronology.web.client;
+package by.chronology.web.client.mapper;
 
 import by.chronology.web.client.place.StartPlace;
 import com.google.gwt.place.shared.PlaceHistoryMapper;

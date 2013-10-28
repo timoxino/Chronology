@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.layout;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

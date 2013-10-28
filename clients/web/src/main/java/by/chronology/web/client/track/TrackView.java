@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.track;
 
 import by.chronology.web.client.model.TimeTag;
 import com.github.gwtbootstrap.client.ui.Button;

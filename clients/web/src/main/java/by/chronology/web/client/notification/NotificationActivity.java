@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.notification;
 
 import by.chronology.web.client.component.AlertComponent;
 import by.chronology.web.client.event.BaseEventHandler;

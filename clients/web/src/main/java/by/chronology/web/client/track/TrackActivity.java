@@ -1,6 +1,7 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.track;
 
 import by.chronology.web.client.event.ShowAlertEvent;
+import by.chronology.web.client.notification.NotificationMessages;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
 
 import com.github.gwtbootstrap.client.ui.constants.AlertType;

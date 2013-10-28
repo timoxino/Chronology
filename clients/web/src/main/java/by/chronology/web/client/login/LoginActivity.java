@@ -1,4 +1,4 @@
-package by.chronology.web.client.common.layout;
+package by.chronology.web.client.login;
 
 import by.chronology.web.client.service.rpc.UserServiceAsync;
 

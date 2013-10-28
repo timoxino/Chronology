@@ -1,6 +1,6 @@
 package by.chronology.web.client.common.gin.provider;
 
-import by.chronology.web.client.TimeTrackerPlaceHistoryMapper;
+import by.chronology.web.client.mapper.TimeTrackerPlaceHistoryMapper;
 import com.google.gwt.core.client.GWT;
 import com.google.inject.Provider;
 

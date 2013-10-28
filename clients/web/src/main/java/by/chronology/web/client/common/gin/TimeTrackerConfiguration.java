@@ -1,6 +1,6 @@
 package by.chronology.web.client.common.gin;
 
-import by.chronology.web.client.TimeTrackerPlaceHistoryMapper;
+import by.chronology.web.client.mapper.TimeTrackerPlaceHistoryMapper;
 import by.chronology.web.client.common.gin.provider.*;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
 import by.chronology.web.client.service.rpc.UserServiceAsync;
