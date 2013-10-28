@@ -1,0 +1,110 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <ui:style>
+    .gwd-page-container {
+    position: relative;
+    width: 100%;
+    }
+    .gwd-page-content {
+    background-color: transparent;
+    -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform-style: preserve-3d;
+    position: absolute;
+    }
+    .gwd-page-wrapper {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    -webkit-transform: translateZ(0px);
+    }
+    .gwd-page-size {
+    width: 250px;
+    height: 110px;
+    }
+    .gwd-span-ohxx {
+    font-size: 90px;
+    }
+    .gwd-div-du3n {
+    position: absolute;
+    font-family:'Times New Roman';
+    text-align: left;
+    font-size: 90px;
+    height: 110px;
+    width: 80px;
+    left: 60px;
+    top: -3px;
+    color: rgb(0, 0, 0);
+    }
+    .gwd-span-4foy {
+    font-family: Lobster;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform-style: preserve-3d;
+    font-size: 105px;
+    }
+    .gwd-div-hhzh {
+    position: absolute;
+    font-family:'Times New Roman';
+    text-align: left;
+    width: 120px;
+    color: rgb(0, 0, 0);
+    left: 90px;
+    top: 16px;
+    }
+    .gwd-span-0i8i {
+    font-size: 35px;
+    }
+    .gwd-div-w7eq {
+    text-align: right;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform-style: preserve-3d;
+    }
+    .gwd-span-0ks9 {
+    font-size: 35px;
+    background-color: transparent;
+    font-family: Lobster;
+    }
+    .gwd-span-gi2w {
+    font-size: 40px;
+    font-family: Lobster;
+    color: rgb(73, 175, 205);
+    }
+    .gwd-span-jkfc {
+    font-family: Lobster;
+    font-size: 105px;
+    color: rgb(73, 175, 205);
+    }
+    .gwd-div-q93p {
+    position: absolute;
+    font-family:'Times New Roman';
+    text-align: left;
+    color: rgb(0, 0, 0);
+    left: 113.79999999999741px;
+    top: -5px;
+    }
+    .gwd-span-3lki {
+    font-family: Lobster;
+    font-size: 90px;
+    color: rgb(73, 175, 205);
+    }
+  </ui:style>
+
+  <g:HTMLPanel ui:field="panel">
+    <div class="{style.gwd-page-container}">
+      <div id="page1" class="{style.gwd-page-wrapper} {style.gwd-page-size}" data-gwd-component-id="page1">
+        <div class="{style.gwd-page-content} {style.gwd-page-size}">
+          <div class="{style.gwd-div-du3n}"><span class="{style.gwd-span-jkfc}">T</span>
+          </div>
+          <div class="{style.gwd-div-hhzh}">
+            <div class="{style.gwd-div-w7eq}"><span class="{style.gwd-span-gi2w}">Time tracker</span>
+            </div>
+          </div>
+          <div class="{style.gwd-div-q93p}"><span class="{style.gwd-span-3lki}">t</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </g:HTMLPanel>
+
+</ui:UiBinder>
