@@ -29,12 +29,14 @@ import static org.mockito.Mockito.when;
 public class TimeTagServiceImplTest
 {
     private TimeTagServiceImpl timeTagService;
+    private by.chronology.core.model.TimeTag timeTagModel;
 
     @Before
     public void setUp() throws Exception
     {
         // service initialization
         timeTagService = new TimeTagServiceImpl();
+        timeTagModel = createTimeTagModel();
 
         // mock objects
         timeTagService.timeTagBusinessService = mock(TimeTagBusinessService.class);
@@ -43,6 +45,7 @@ public class TimeTagServiceImplTest
         // stubbing
         final ArrayList<by.chronology.core.model.TimeTag> timeTagsModel = populateTimeTagsModel();
         when(timeTagService.timeTagBusinessService.getAllTimeTags()).thenReturn(timeTagsModel);
+        when(timeTagService.mapper.map(any(TimeTag.class), eq(by.chronology.core.model.TimeTag.class))).thenReturn(timeTagModel);
     }
 
     @Test
@@ -70,6 +73,28 @@ public class TimeTagServiceImplTest
 
         // check result values
         assertThat("Full mapped list should be returned", timeTagsUI.size(), is(2));
+    }
+
+    @Test
+    public void updateTimeTag()
+    {
+        final TimeTag timeTag = new TimeTag();
+
+        // service invocation
+        timeTagService.updateTimeTag(timeTag);
+
+        // check expectations
+        verify(timeTagService.mapper).map(timeTag, by.chronology.core.model.TimeTag.class);
+        verify(timeTagService.timeTagBusinessService).createTimeTag(timeTagModel);
+    }
+
+    private by.chronology.core.model.TimeTag createTimeTagModel()
+    {
+        by.chronology.core.model.TimeTag timeTagModel = new by.chronology.core.model.TimeTag();
+        timeTagModel.setId(ID);
+        timeTagModel.setTagName(NAME);
+        timeTagModel.setTagDescription(DESCRIPTION);
+        return timeTagModel;
     }
 
     private ArrayList<by.chronology.core.model.TimeTag> populateTimeTagsModel()
