@@ -56,7 +56,7 @@ public class TrackActivity extends AbstractActivity
         @Override
         public void onSuccess(Void result)
         {
-            eventBus.fireEvent(new ShowAlertEvent(AlertType.SUCCESS, messages.success(), messages.timeTagWasSaved()));
+            eventBus.fireEvent(new ShowAlertEvent(AlertType.INFO, messages.success(), messages.timeTagWasSaved()));
         }
 
         @Override

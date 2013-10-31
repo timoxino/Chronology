@@ -89,7 +89,7 @@ public class TrackActivityTest
         ArgumentCaptor<ShowAlertEvent> captor = ArgumentCaptor.forClass(ShowAlertEvent.class);
         verify(eventBus).fireEvent(captor.capture());
 
-        checkEvent(captor, AlertType.SUCCESS, SUCCESS, SAVED);
+        checkEvent(captor, AlertType.INFO, SUCCESS, SAVED);
     }
 
     @Test
