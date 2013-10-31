@@ -21,6 +21,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class TrackActivity extends AbstractActivity
 {
+    final FireShowAlertEventCallback fireShowAlertEventCallback = new FireShowAlertEventCallback();
     @Inject
     NotificationMessages messages;
     TrackView trackView;
@@ -46,19 +47,22 @@ public class TrackActivity extends AbstractActivity
 
     public void onTrack()
     {
-        timeTagService.updateTimeTag(trackView.getTimeTag(), new AsyncCallback<Void>()
-        {
-            @Override
-            public void onSuccess(Void result)
-            {
-                eventBus.fireEvent(new ShowAlertEvent(AlertType.SUCCESS, messages.success(), messages.timeTagWasSaved()));
-            }
+        timeTagService.updateTimeTag(trackView.getTimeTag(), fireShowAlertEventCallback);
+    }
 
-            @Override
-            public void onFailure(Throwable caught)
-            {
-                eventBus.fireEvent(new ShowAlertEvent(AlertType.ERROR, messages.failure(), messages.timeTagWasNotSaved()));
-            }
-        });
+    class FireShowAlertEventCallback implements AsyncCallback<Void>
+    {
+
+        @Override
+        public void onSuccess(Void result)
+        {
+            eventBus.fireEvent(new ShowAlertEvent(AlertType.SUCCESS, messages.success(), messages.timeTagWasSaved()));
+        }
+
+        @Override
+        public void onFailure(Throwable caught)
+        {
+            eventBus.fireEvent(new ShowAlertEvent(AlertType.ERROR, messages.failure(), messages.timeTagWasNotSaved()));
+        }
     }
 }
