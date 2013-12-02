@@ -5,6 +5,8 @@ import by.chronology.web.client.model.TimeTag;
 import by.chronology.web.client.service.rpc.TimeTagService;
 import by.chronology.web.server.common.RemoteServiceSpringSupportServlet;
 import org.dozer.DozerBeanMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ import java.util.List;
  */
 public class TimeTagServiceImpl extends RemoteServiceSpringSupportServlet implements TimeTagService
 {
+    final static Logger LOGGER = LoggerFactory.getLogger(TimeTagServiceImpl.class);
+
     @Autowired
     TimeTagBusinessService timeTagBusinessService;
 
@@ -27,6 +31,7 @@ public class TimeTagServiceImpl extends RemoteServiceSpringSupportServlet implem
     @Override
     public void updateTimeTag(TimeTag timeTag)
     {
+        LOGGER.debug("Update time tag servlet operation has been started...");
         if (timeTag.getId() == null)
         {
             timeTagBusinessService.createTimeTag(mapper.map(timeTag, by.chronology.core.model.TimeTag.class));
