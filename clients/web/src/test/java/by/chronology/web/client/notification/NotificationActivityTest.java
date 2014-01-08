@@ -5,6 +5,7 @@ import by.chronology.web.client.event.ShowAlertEvent;
 import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.gwt.junit.GWTMockUtilities;
 import com.google.gwt.place.shared.PlaceController;
+import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,5 +48,18 @@ public class NotificationActivityTest
         activity.handleEvent(event);
 
         verify(alertComponent).show(AlertType.SUCCESS, "Heading", "Message");
+    }
+
+    @Test
+    public void start()
+    {
+        //given
+        final AcceptsOneWidget panel = mock(AcceptsOneWidget.class);
+
+        //when
+        activity.start(panel, null);
+
+        //then
+        verify(panel).setWidget(alertComponent);
     }
 }

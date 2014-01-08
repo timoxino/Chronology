@@ -1,10 +1,15 @@
 package by.chronology.web.client.track;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
+import by.chronology.web.client.event.ShowAlertEvent;
+import by.chronology.web.client.model.TimeTag;
+import by.chronology.web.client.notification.NotificationMessages;
+import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
+import com.github.gwtbootstrap.client.ui.constants.AlertType;
+import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.junit.GWTMockUtilities;
+import com.google.gwt.place.shared.PlaceController;
+import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import com.google.gwt.user.client.ui.Widget;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,15 +19,10 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import by.chronology.web.client.event.ShowAlertEvent;
-import by.chronology.web.client.model.TimeTag;
-import by.chronology.web.client.notification.NotificationMessages;
-import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
-
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.junit.GWTMockUtilities;
-import com.google.gwt.place.shared.PlaceController;
+import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * @author Tsimafei_Shchytkavets
@@ -68,6 +68,24 @@ public class TrackActivityTest
     public void tearDown()
     {
         GWTMockUtilities.restore();
+    }
+
+    @Test
+    public void start()
+    {
+        //given
+        final EventBus eventBusMock = mock(EventBus.class);
+        final AcceptsOneWidget panel = mock(AcceptsOneWidget.class);
+        final Widget trackViewAsWidget = mock(Widget.class);
+        when(trackView.asWidget()).thenReturn(trackViewAsWidget);
+
+        //when
+        activity.start(panel, eventBusMock);
+
+        //then
+        verify(trackView).asWidget();
+        verify(panel).setWidget(trackViewAsWidget);
+        Assert.assertThat("Event bus should be populated", activity.eventBus, is(eventBusMock));
     }
 
     @Test
