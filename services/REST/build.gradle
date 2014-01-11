@@ -1,7 +1,23 @@
 apply plugin: "war"
+apply plugin: 'spring-boot'
 
 group = 'by.chronology.service.rest'
 description = """CHR : Service : REST"""
+
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:0.5.0.M7")
+    }
+}
+
+jar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
 
 dependencies {
     compile project(':domains:core:core-model')
@@ -9,6 +25,16 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-beans', version:'3.1.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version:'3.1.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version:'3.1.0.RELEASE'
-    compile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
     compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version:'1.9.12'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '0.5.0.M7'
+}
+
+repositories {
+    maven {
+        url 'http://repo.spring.io/milestone'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
 }
