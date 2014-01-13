@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * RESTful service that provides CRUD functionality related to <code>TimeTag</code> entity.
@@ -16,12 +17,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 6/9/13
  */
-@Controller
+@RestController
 @RequestMapping("/timeTags")
 public class TimeTagController
 {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = {"Accept=application/json"})
-    public @ResponseBody TimeTag getTimeTags(@PathVariable long id)
+    public TimeTag getTimeTags(@PathVariable long id)
     {
         // TODO: stub implementation
         return new TimeTag();
@@ -43,7 +44,7 @@ public class TimeTagController
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public @ResponseBody TimeTag createTimeTag(@RequestBody TimeTag timeTag)
+    public TimeTag createTimeTag(@RequestBody TimeTag timeTag)
     {
         // TODO: stub implementation
         return new TimeTag();
