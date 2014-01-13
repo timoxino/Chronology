@@ -21,10 +21,10 @@ jar {
 
 dependencies {
     compile project(':domains:core:core-model')
-    compile group: 'org.springframework', name: 'spring-core', version:'3.1.0.RELEASE'
-    compile group: 'org.springframework', name: 'spring-beans', version:'3.1.0.RELEASE'
-    compile group: 'org.springframework', name: 'spring-web', version:'3.1.0.RELEASE'
-    compile group: 'org.springframework', name: 'spring-webmvc', version:'3.1.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version:'4.0.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version:'4.0.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.0.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.0.0.RELEASE'
     compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version:'1.9.12'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '0.5.0.M7'
 }
