@@ -8,18 +8,12 @@
   <context:component-scan base-package="by.chronology.service.rest" />
 
     <!-- Register JSON Converter for RESTful service -->
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
                 <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
                 </bean>
             </list>
-        </property>
-    </bean>
-
-    <!-- Http Json MessageConverter -->
-    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-        <property name="supportedMediaTypes" value="application/json">
         </property>
     </bean>
 
