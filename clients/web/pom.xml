@@ -63,12 +63,6 @@
     </dependency>
 
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.21</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>4.3.0.Final</version>
@@ -181,6 +175,21 @@
       <version>1.0</version>
       <type>jar</type>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>by.chronology.data-access</groupId>
+      <artifactId>data-access</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    <!-- extra dependency, need to be deleted after fix in dependency hell between 'data-access' and 'util' modules -->
+    <dependency>
+      <groupId>by.chronology.util</groupId>
+      <artifactId>util</artifactId>
+      <version>1.0</version>
+      <type>jar</type>
+      <scope>runtime</scope>
     </dependency>
 
     <!-- Logging -->
