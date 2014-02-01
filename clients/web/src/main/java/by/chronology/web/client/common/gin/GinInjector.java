@@ -10,8 +10,8 @@ import com.google.gwt.inject.client.Ginjector;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 10/22/12
  */
-@GinModules(TimeTrackerConfiguration.class)
-public interface TimeTrackerInjector extends Ginjector
+@GinModules(GinConfiguration.class)
+public interface GinInjector extends Ginjector
 {
     /**
      * Returns main application controller.

@@ -1,6 +1,6 @@
 package by.chronology.web.client;
 
-import by.chronology.web.client.common.gin.TimeTrackerInjector;
+import by.chronology.web.client.common.gin.GinInjector;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 
@@ -12,7 +12,7 @@ import com.google.gwt.core.client.GWT;
  */
 public class TimeTracker implements EntryPoint
 {
-    private final TimeTrackerInjector injector = GWT.create(TimeTrackerInjector.class);
+    private final GinInjector injector = GWT.create(GinInjector.class);
 
     @Override
     public void onModuleLoad()

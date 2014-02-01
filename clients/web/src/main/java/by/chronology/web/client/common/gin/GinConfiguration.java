@@ -17,7 +17,7 @@ import com.google.web.bindery.event.shared.SimpleEventBus;
  * @author Tsimafei Shchytkavets
  *         Creation Date: 10/22/12
  */
-public class TimeTrackerConfiguration extends AbstractGinModule
+public class GinConfiguration extends AbstractGinModule
 {
     @Override
     protected void configure()
