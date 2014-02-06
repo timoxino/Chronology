@@ -18,7 +18,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource;
  *
  * @author Tsimafei_Shchytkavets
  */
-@PropertySource("classpath:environment.properties")
+@PropertySource("classpath:db_connection.properties")
 @Import(UtilConfiguration.class)
 @EnableTransactionManagement
 @Configuration
