@@ -5,7 +5,7 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
     testCompile project(':common:test')
     testCompile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
-    testCompile group: 'org.springframework', name: 'spring-test', version:'3.1.0.RELEASE'
-    testCompile group: 'org.springframework', name: 'spring-orm', version:'3.1.0.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.0.0.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-orm', version:'4.0.0.RELEASE'
     testCompile group: 'javassist', name: 'javassist', version:'3.12.1.GA'
 }

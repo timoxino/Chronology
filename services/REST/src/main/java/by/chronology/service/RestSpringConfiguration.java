@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  *
  * @author Tsimafei_Shchytkavets
  */
-@ComponentScan(basePackages = "by.chronology.service")
+@ComponentScan(basePackages = "by.chronology")
 @PropertySource("classpath:environment.properties")
 @Configuration
 public class RestSpringConfiguration extends WebMvcConfigurationSupport
