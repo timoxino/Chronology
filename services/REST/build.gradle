@@ -21,6 +21,7 @@ jar {
 
 dependencies {
     compile project(':domains:core:core-model')
+    compile project(':domains:core:core-service')
     compile group: 'org.springframework', name: 'spring-core', version:'4.0.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-beans', version:'4.0.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version:'4.0.0.RELEASE'

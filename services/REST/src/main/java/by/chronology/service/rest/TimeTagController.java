@@ -1,15 +1,17 @@
 package by.chronology.service.rest;
 
 import by.chronology.core.model.TimeTag;
+import by.chronology.core.service.TimeTagBusinessService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.Timestamp;
 
 /**
  * RESTful service that provides CRUD functionality related to <code>TimeTag</code> entity.
@@ -21,11 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/timeTags")
 public class TimeTagController
 {
+    @Autowired
+    TimeTagBusinessService timeTagBusinessService;
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = {"Accept=application/json"})
     public TimeTag getTimeTags(@PathVariable long id)
     {
-        // TODO: stub implementation
-        return new TimeTag();
+        // TODO: Temporary implementation that returns first item.
+        final TimeTag firstTimeTag = timeTagBusinessService.getAllTimeTags().get(0);
+        return firstTimeTag;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
@@ -46,7 +52,7 @@ public class TimeTagController
     @ResponseStatus(HttpStatus.CREATED)
     public TimeTag createTimeTag(@RequestBody TimeTag timeTag)
     {
-        // TODO: stub implementation
-        return new TimeTag();
+        final TimeTag createdTimeTag = timeTagBusinessService.createTimeTag(timeTag);
+        return createdTimeTag;
     }
 }
