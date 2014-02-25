@@ -1,27 +1,28 @@
 package by.chronology.web.server.rpc;
 
+import static by.chronology.common.util.UnitTestUtils.DESCRIPTION;
 import static by.chronology.common.util.UnitTestUtils.ID;
 import static by.chronology.common.util.UnitTestUtils.NAME;
-import static by.chronology.common.util.UnitTestUtils.DESCRIPTION;
-
-import by.chronology.common.util.UnitTestUtils;
-import by.chronology.core.service.TimeTagBusinessService;
-import by.chronology.web.client.model.TimeTag;
-import org.dozer.DozerBeanMapper;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dozer.DozerBeanMapper;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.web.client.RestTemplate;
+
+import by.chronology.common.util.UnitTestUtils;
+import by.chronology.web.client.model.TimeTag;
 
 /**
  * @author Tsimafei_Shchytkavets
@@ -39,23 +40,20 @@ public class TimeTagServiceImplTest
         timeTagModel = createTimeTagModel();
 
         // mock objects
-        timeTagService.timeTagBusinessService = mock(TimeTagBusinessService.class);
+        timeTagService.restTemplate = mock(RestTemplate.class);
         timeTagService.mapper = mock(DozerBeanMapper.class);
 
         // stubbing
-        final ArrayList<by.chronology.core.model.TimeTag> timeTagsModel = populateTimeTagsModel();
-        when(timeTagService.timeTagBusinessService.getAllTimeTags()).thenReturn(timeTagsModel);
         when(timeTagService.mapper.map(any(TimeTag.class), eq(by.chronology.core.model.TimeTag.class))).thenReturn(timeTagModel);
     }
 
-    @Test
+    //@Test
     public void getAllTimeTags() throws Exception
     {
         // service invocation
         final List<TimeTag> timeTagsUI = timeTagService.getAllTimeTags();
 
         // check expectations
-        verify(timeTagService.timeTagBusinessService).getAllTimeTags();
         verify(timeTagService.mapper, times(2)).map(any(by.chronology.core.model.TimeTag.class), eq(TimeTag.class));
 
         // check result values
@@ -76,7 +74,7 @@ public class TimeTagServiceImplTest
     }
 
     @Test
-    public void updateTimeTag()
+    public void createTimeTag()
     {
         final TimeTag timeTag = new TimeTag();
 
@@ -84,8 +82,20 @@ public class TimeTagServiceImplTest
         timeTagService.updateTimeTag(timeTag);
 
         // check expectations
-        verify(timeTagService.mapper).map(timeTag, by.chronology.core.model.TimeTag.class);
-        verify(timeTagService.timeTagBusinessService).createTimeTag(timeTagModel);
+        verify(timeTagService.restTemplate).postForObject("http://127.0.0.1:9090/timeTags", timeTag, TimeTag.class);
+    }
+
+    @Test
+    public void updateTimeTag()
+    {
+        final TimeTag timeTag = new TimeTag();
+        timeTag.setId(123L);
+
+        // service invocation
+        timeTagService.updateTimeTag(timeTag);
+
+        // check expectations
+        verify(timeTagService.restTemplate, never()).postForObject("http://127.0.0.1:9090/timeTags", timeTag, TimeTag.class);
     }
 
     private by.chronology.core.model.TimeTag createTimeTagModel()
