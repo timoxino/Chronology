@@ -1,5 +1,6 @@
-package by.chronology.common.dao;
+package by.chronology.common.dao.impl;
 
+import by.chronology.common.dao.GenericDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.List;
  *         Creation Date: 11/4/12
  */
 @Transactional
-public class GenericDaoImpl<T> implements  GenericDao<T>
+public class GenericDaoImpl<T> implements GenericDao<T>
 {
     @Autowired
     protected SessionFactory sessionFactory;

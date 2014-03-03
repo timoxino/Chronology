@@ -1,5 +1,6 @@
-package by.chronology.common.dao;
+package by.chronology.common.dao.impl;
 
+import by.chronology.common.dao.impl.GenericDaoImpl;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
