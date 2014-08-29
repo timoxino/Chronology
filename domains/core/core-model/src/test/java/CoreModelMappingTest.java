@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  *         Creation Date: 11/18/12
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+// TODO: use Java-based configuration instead
 @ContextConfiguration(locations = "/applicationContext-test.xml")
 @Transactional
 public class CoreModelMappingTest
