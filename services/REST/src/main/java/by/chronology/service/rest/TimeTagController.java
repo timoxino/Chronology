@@ -29,9 +29,8 @@ public class TimeTagController
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = {"Accept=application/json"})
     public TimeTag getTimeTags(@PathVariable long id)
     {
-        // TODO: Temporary implementation that returns first item.
-        final TimeTag firstTimeTag = timeTagBusinessService.getAllTimeTags().get(0);
-        return firstTimeTag;
+        // TODO: Temporary implementation that returns empty item.
+        return new TimeTag();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
@@ -45,14 +44,13 @@ public class TimeTagController
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTimeTag(@PathVariable long id)
     {
-        // TODO: stub implementation
+        timeTagBusinessService.deleteTimeTag(id);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public TimeTag createTimeTag(@RequestBody TimeTag timeTag)
     {
-        final TimeTag createdTimeTag = timeTagBusinessService.createTimeTag(timeTag);
-        return createdTimeTag;
+        return timeTagBusinessService.createTimeTag(timeTag);
     }
 }

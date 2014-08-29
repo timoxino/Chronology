@@ -5,4 +5,5 @@ dependencies {
     compile project(':common:data-access')
     compile project(':domains:core:core-model')
     compile group: 'org.springframework', name: 'spring-context', version:'4.0.0.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.0.0.RELEASE'
 }
