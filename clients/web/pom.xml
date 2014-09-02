@@ -11,7 +11,7 @@
   <description>This bundle contains GWT web application</description>
 
   <properties>
-    <java.compliance.level>1.6</java.compliance.level>
+    <java.compliance.level>1.8</java.compliance.level>
     <target.build.directory>target</target.build.directory>
 
     <!-- Versions of the used libraries -->
