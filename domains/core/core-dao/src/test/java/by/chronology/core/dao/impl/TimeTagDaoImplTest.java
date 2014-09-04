@@ -43,19 +43,16 @@ public class TimeTagDaoImplTest
 
         final TimeTag timeTag1 = new TimeTag();
         timeTag1.setTagTimestamp(new Timestamp(getDateInMillis(1985, 5, 28)));
-        timeTag1.setLastUpdateTimestamp(new Timestamp(getDateInMillis(2020, 1, 1)));
         timeTag1.setTagName("Birthday Tag Name");
         session.save(timeTag1);
 
         final TimeTag timeTag2 = new TimeTag();
         timeTag2.setTagTimestamp(new Timestamp(getDateInMillis(1989, 1, 18)));
-        timeTag2.setLastUpdateTimestamp(new Timestamp(getDateInMillis(2020, 1, 1)));
         timeTag2.setTagName("Wife Birthday Tag Name");
         session.save(timeTag2);
 
         final TimeTag timeTag3 = new TimeTag();
         timeTag3.setTagTimestamp(new Timestamp(getDateInMillis(2014, 3, 24)));
-        timeTag3.setLastUpdateTimestamp(new Timestamp(getDateInMillis(2020, 1, 1)));
         timeTag3.setTagName("Son Birthday Tag Name");
         session.save(timeTag3);
 
