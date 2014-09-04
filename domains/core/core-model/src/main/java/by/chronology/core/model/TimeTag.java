@@ -1,13 +1,13 @@
 package by.chronology.core.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Version;
-import java.sql.Timestamp;
 
 /**
  * The most base entity represents tag of the time with name and description as a string.
@@ -19,23 +19,10 @@ import java.sql.Timestamp;
 @Table(name = "TIME_TAG", schema = "TIME")
 public class TimeTag
 {
-    private Timestamp lastUpdateTimestamp;
     private Long id;
     private String tagName;
     private String tagDescription;
     private Timestamp tagTimestamp;
-
-    @Version
-    @Column(name = "LST_UPDT_TS", nullable = false)
-    public Timestamp getLastUpdateTimestamp()
-    {
-        return lastUpdateTimestamp;
-    }
-
-    public void setLastUpdateTimestamp(Timestamp lastUpdateTimestamp)
-    {
-        this.lastUpdateTimestamp = lastUpdateTimestamp;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

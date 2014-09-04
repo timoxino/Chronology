@@ -21,7 +21,6 @@ public class UnitTestUtils
         timeTagModel.setId(id);
         timeTagModel.setTagName(name);
         timeTagModel.setTagDescription(description);
-        timeTagModel.setLastUpdateTimestamp(LAST_UPDATE_TIMESTAMP);
         timeTagModel.setTagTimestamp(TAG_TIMESTAMP);
         return timeTagModel;
     }
