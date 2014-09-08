@@ -1,10 +1,51 @@
 group = 'by.chronology.core'
 description = """CHR : Domains : Core : Model"""
 
+project.ext {
+    dbDriver = 'com.mysql.jdbc.Driver'
+    dbUrl = 'jdbc:mysql://localhost:3306?useUnicode=yes&characterEncoding=UTF-8'
+    dbUsername = 'root'
+    dbPassword = 'root'
+}
+
+task drCrSh << {
+    ant.sql(driver: dbDriver,
+            url: dbUrl,
+            userid: dbUsername,
+            password: dbPassword,
+            encoding: 'UTF-8',
+            classpath: configurations.compile.asPath) {
+        fileset(file: 'src/main/sql/drop.sql')
+        fileset(file: 'src/main/sql/create.sql')
+    }
+}
+
+task drSh << {
+    ant.sql(driver: dbDriver,
+            url: dbUrl,
+            userid: dbUsername,
+            password: dbPassword,
+            encoding: 'UTF-8',
+            classpath: configurations.compile.asPath) {
+        fileset(file: 'src/main/sql/drop.sql')
+    }
+}
+
+task crSh << {
+    ant.sql(driver: dbDriver,
+            url: dbUrl,
+            userid: dbUsername,
+            password: dbPassword,
+            encoding: 'UTF-8',
+            classpath: configurations.compile.asPath) {
+        fileset(file: 'src/main/sql/create.sql')
+    }
+}
+
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
     testCompile project(':common:test')
-    testCompile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
     testCompile group: 'org.springframework', name: 'spring-test', version:'4.0.0.RELEASE'
     testCompile group: 'org.springframework', name: 'spring-orm', version:'4.0.0.RELEASE'
     testCompile group: 'javassist', name: 'javassist', version:'3.12.1.GA'
