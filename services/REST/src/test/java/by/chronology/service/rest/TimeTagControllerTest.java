@@ -1,6 +1,6 @@
 package by.chronology.service.rest;
 
-import by.chronology.common.util.UnitTestUtils;
+import by.chronology.common.test.UnitTestUtils;
 import by.chronology.core.model.TimeTag;
 import by.chronology.core.service.TimeTagBusinessService;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package by.chronology.common.util;
+package by.chronology.common.test;
 
 import java.sql.Timestamp;
 
