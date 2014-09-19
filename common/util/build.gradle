@@ -2,7 +2,8 @@ group = 'by.chronology.util'
 description = """CHR : Common : Util"""
 
 dependencies {
-    compile project(':domains:core:core-model')
     compile group: 'org.springframework', name: 'spring-context', version:'4.0.0.RELEASE'
     compile group: 'org.springframework', name: 'spring-orm', version:'4.0.0.RELEASE'
+    testCompile group: 'javassist', name: 'javassist', version: '3.12.1.GA'
+    testCompile group: 'cglib', name: 'cglib', version: '3.1'
 }
