@@ -2,6 +2,7 @@ group = 'by.chronology.test'
 description = """CHR : Common : Test"""
 
 dependencies {
+    compile project(':domains:core:core-model')
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
     compile group: 'org.springframework', name: 'spring-context', version:'4.0.0.RELEASE'
 }
