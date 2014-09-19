@@ -45,6 +45,8 @@ task crSh << {
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version:'3.6.3.Final'
     compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.21'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version:'3.0'
+    compile project(':common:util')
     testCompile project(':common:test')
     testCompile group: 'org.springframework', name: 'spring-test', version:'4.0.0.RELEASE'
     testCompile group: 'org.springframework', name: 'spring-orm', version:'4.0.0.RELEASE'
