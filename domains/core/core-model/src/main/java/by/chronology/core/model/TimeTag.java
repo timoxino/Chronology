@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -23,6 +25,7 @@ public class TimeTag
     private String tagName;
     private String tagDescription;
     private Timestamp tagTimestamp;
+    private User user;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -68,5 +71,17 @@ public class TimeTag
     public void setTagTimestamp(Timestamp tagTimestamp)
     {
         this.tagTimestamp = tagTimestamp;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "USER_KEY")
+    public User getUser()
+    {
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
     }
 }

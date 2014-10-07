@@ -4,6 +4,7 @@ import by.chronology.common.dao.criteria.DateRangeSearchCriteria;
 import by.chronology.core.dao.TimeTagDao;
 import by.chronology.core.dao.config.TimeTagDaoImplTestConfiguration;
 import by.chronology.core.model.TimeTag;
+import by.chronology.core.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.junit.Before;
@@ -41,19 +42,27 @@ public class TimeTagDaoImplTest
     {
         final Session session = sessionFactory.getCurrentSession();
 
+        final User user = new User();
+        user.setEmail("test@gmail.com");
+        user.setPassword("pass");
+        session.save(user);
+
         final TimeTag timeTag1 = new TimeTag();
         timeTag1.setTagTimestamp(new Timestamp(getDateInMillis(1985, 5, 28)));
         timeTag1.setTagName("Birthday Tag Name");
+        timeTag1.setUser(user);
         session.save(timeTag1);
 
         final TimeTag timeTag2 = new TimeTag();
         timeTag2.setTagTimestamp(new Timestamp(getDateInMillis(1989, 1, 18)));
         timeTag2.setTagName("Wife Birthday Tag Name");
+        timeTag2.setUser(user);
         session.save(timeTag2);
 
         final TimeTag timeTag3 = new TimeTag();
         timeTag3.setTagTimestamp(new Timestamp(getDateInMillis(2014, 3, 24)));
         timeTag3.setTagName("Son Birthday Tag Name");
+        timeTag3.setUser(user);
         session.save(timeTag3);
 
         session.flush();
