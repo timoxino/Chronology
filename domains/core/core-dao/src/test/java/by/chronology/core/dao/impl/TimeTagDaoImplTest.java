@@ -105,6 +105,18 @@ public class TimeTagDaoImplTest
         assertThat("Unexpected tag name", byDates.get(0).getTagName(), is("Birthday Tag Name"));
     }
 
+    @Test
+    public void save()
+    {
+        final TimeTag timeTag = new TimeTag();
+        timeTag.setTagName("test 1");
+        timeTag.setTagTimestamp(new Timestamp(getDateInMillis(2014, 3, 24)));
+        final User user = new User();
+        user.setId(1L);
+        timeTag.setUser(user);
+        timeTagDao.save(timeTag);
+    }
+
     private long getDateInMillis(int year, int month, int date)
     {
         Calendar calendar = Calendar.getInstance();
