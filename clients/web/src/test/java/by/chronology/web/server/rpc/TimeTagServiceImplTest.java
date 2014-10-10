@@ -1,8 +1,8 @@
 package by.chronology.web.server.rpc;
 
-import static by.chronology.common.util.UnitTestUtils.DESCRIPTION;
-import static by.chronology.common.util.UnitTestUtils.ID;
-import static by.chronology.common.util.UnitTestUtils.NAME;
+import static by.chronology.common.test.UnitTestUtils.DESCRIPTION;
+import static by.chronology.common.test.UnitTestUtils.ID;
+import static by.chronology.common.test.UnitTestUtils.NAME;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -21,7 +21,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
-import by.chronology.common.util.UnitTestUtils;
+import by.chronology.common.test.UnitTestUtils;
 import by.chronology.web.client.model.TimeTag;
 
 /**

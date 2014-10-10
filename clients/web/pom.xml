@@ -130,8 +130,8 @@
       <version>1.0</version>
     </dependency>
     <dependency>
-      <groupId>by.chronology.util</groupId>
-      <artifactId>util</artifactId>
+      <groupId>by.chronology.test</groupId>
+      <artifactId>test</artifactId>
       <version>1.0</version>
       <type>jar</type>
       <scope>test</scope>

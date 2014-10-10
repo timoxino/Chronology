@@ -11,21 +11,11 @@ import java.sql.Timestamp;
  */
 public class TimeTag implements Serializable
 {
-    private Timestamp lastUpdateTimestamp;
     private Long id;
     private String tagName;
     private String tagDescription;
     private Timestamp tagTimestamp;
-
-    public Timestamp getLastUpdateTimestamp()
-    {
-        return lastUpdateTimestamp;
-    }
-
-    public void setLastUpdateTimestamp(Timestamp lastUpdateTimestamp)
-    {
-        this.lastUpdateTimestamp = lastUpdateTimestamp;
-    }
+    private User user;
 
     public Long getId()
     {
@@ -65,5 +55,15 @@ public class TimeTag implements Serializable
     public void setTagTimestamp(Timestamp tagTimestamp)
     {
         this.tagTimestamp = tagTimestamp;
+    }
+
+    public User getUser()
+    {
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
     }
 }

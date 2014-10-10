@@ -1,6 +1,7 @@
 package by.chronology.web.client.track;
 
 import by.chronology.web.client.model.TimeTag;
+import by.chronology.web.client.model.User;
 import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.TextBox;
 import com.google.gwt.core.client.GWT;
@@ -55,9 +56,13 @@ public class TrackView extends Composite
         final TimeTag timeTag = new TimeTag();
         timeTag.setTagDescription(actionDescriptionField.getValue());
         final Timestamp currentTimestamp = new Timestamp(new Date().getTime());
-        timeTag.setLastUpdateTimestamp(currentTimestamp);
         timeTag.setTagTimestamp(currentTimestamp);
         timeTag.setTagName("test name");
+        final User user = new User();
+        user.setId(1L);
+        user.setEmail("test");
+        user.setPassword("testp");
+        timeTag.setUser(user);
         return timeTag;
     }
 }
