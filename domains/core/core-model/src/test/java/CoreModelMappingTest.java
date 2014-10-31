@@ -1,4 +1,5 @@
 import by.chronology.common.test.HibernateMappingHelper;
+import by.chronology.core.config.CoreModelMappingTestConfiguration;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.junit.Test;
@@ -13,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  *         Creation Date: 11/18/12
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-// TODO: use Java-based configuration instead
-@ContextConfiguration(locations = "/applicationContext-test.xml")
+@ContextConfiguration(classes = {CoreModelMappingTestConfiguration.class})
 @Transactional
 public class CoreModelMappingTest
 {
