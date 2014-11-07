@@ -1,7 +1,7 @@
 package by.chronology.service.rest;
 
-import by.chronology.common.test.UnitTestUtils;
 import by.chronology.core.model.TimeTag;
+import by.chronology.core.model.util.CoreModelTestUtil;
 import by.chronology.core.service.TimeTagBusinessService;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,8 +30,8 @@ public class TimeTagControllerTest
     public void createTimeTag()
     {
         //given
-        final TimeTag newTimeTag = UnitTestUtils.createTimeTagModel(null, "testName", "testDesc");
-        final TimeTag savedTimeTag = UnitTestUtils.createTimeTagModel(123L, "testName", "testDesc");
+        final TimeTag newTimeTag = CoreModelTestUtil.createTimeTagModel(null, "testName", "testDesc");
+        final TimeTag savedTimeTag = CoreModelTestUtil.createTimeTagModel(123L, "testName", "testDesc");
         when(controller.timeTagBusinessService.createTimeTag(newTimeTag)).thenReturn(savedTimeTag);
 
         //when

@@ -1,4 +1,4 @@
-package by.chronology.common.test;
+package by.chronology.core.model.util;
 
 import java.sql.Timestamp;
 
@@ -7,8 +7,7 @@ import java.sql.Timestamp;
  *
  * @author Tsimafei_Shchytkavets
  */
-// TODO: Move under core.model package
-public class UnitTestUtils
+public class CoreModelTestUtil
 {
     public static final Long ID = 123L;
     public static final String NAME = "simple name";
