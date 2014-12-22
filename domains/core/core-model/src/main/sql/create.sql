@@ -15,6 +15,7 @@ CREATE TABLE TIME.USER
   USER_KEY bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Surrogate key for User entity, uniquely identifies entity inside system.',
   EMAIL varchar(40) NOT NULL COMMENT 'User\'s email',
   PASSWORD varchar(40) NOT NULL COMMENT 'User\'s password',
+  SALT varchar(16) NOT NULL COMMENT 'Some additional data',
   CONSTRAINT USER_KEY_PK PRIMARY KEY (USER_KEY)
 ) COMMENT = 'Table for base User entities';
 

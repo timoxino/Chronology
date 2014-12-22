@@ -2,6 +2,7 @@ package by.chronology.core.dao.impl;
 
 import by.chronology.common.dao.criteria.DateRangeSearchCriteria;
 import by.chronology.core.dao.TimeTagDao;
+import by.chronology.core.dao.UserDao;
 import by.chronology.core.dao.config.TimeTagDaoImplTestConfiguration;
 import by.chronology.core.model.TimeTag;
 import by.chronology.core.model.User;
@@ -35,6 +36,9 @@ public class TimeTagDaoImplTest
     TimeTagDao timeTagDao;
 
     @Autowired
+    UserDao userDao;
+
+    @Autowired
     SessionFactory sessionFactory;
 
     @Before
@@ -45,6 +49,7 @@ public class TimeTagDaoImplTest
         final User user = new User();
         user.setEmail("test@gmail.com");
         user.setPassword("pass");
+        user.setSalt("salt");
         session.save(user);
 
         final TimeTag timeTag1 = new TimeTag();
@@ -111,9 +116,7 @@ public class TimeTagDaoImplTest
         final TimeTag timeTag = new TimeTag();
         timeTag.setTagName("test 1");
         timeTag.setTagTimestamp(new Timestamp(getDateInMillis(2014, 3, 24)));
-        final User user = new User();
-        user.setId(1L);
-        timeTag.setUser(user);
+        timeTag.setUser(userDao.getAll().get(0));
         timeTagDao.save(timeTag);
     }
 

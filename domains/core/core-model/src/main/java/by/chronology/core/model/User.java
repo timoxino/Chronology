@@ -19,6 +19,7 @@ public class User
     private Long id;
     private String email;
     private String password;
+    private String salt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,5 +54,16 @@ public class User
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    @Column(name = "SALT", nullable = false)
+    public String getSalt()
+    {
+        return salt;
+    }
+
+    public void setSalt(String salt)
+    {
+        this.salt = salt;
     }
 }
