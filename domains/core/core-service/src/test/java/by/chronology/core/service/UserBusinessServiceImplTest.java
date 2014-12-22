@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
@@ -41,5 +42,6 @@ public class UserBusinessServiceImplTest
         assertThat("Unexpected instance in result", resultUser, sameInstance(captor.getValue()));
         assertThat("Unexpected instance to be saved", user, sameInstance(captor.getValue()));
         assertThat("Password should be hashed", captor.getValue().getPassword(), not("PSWD"));
+        assertThat("Salt should be generated", captor.getValue().getSalt(), notNullValue());
     }
 }

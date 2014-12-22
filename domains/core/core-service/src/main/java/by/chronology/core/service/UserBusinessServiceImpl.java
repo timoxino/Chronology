@@ -23,16 +23,28 @@ public class UserBusinessServiceImpl implements UserBusinessService
     @Override
     public User createUser(User user)
     {
-        final String securedPassword;
+        String securedPassword;
+        String salt = null;
+
         try
         {
-            securedPassword = SecurityUtil.getSHA1SecuredPassword(user.getPassword());
+            salt = SecurityUtil.generateSalt();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            // TODO: Use logger here and keep salt null
+        }
+
+        try
+        {
+            securedPassword = SecurityUtil.getSHA1SecuredPassword(user.getPassword(), salt);
         }
         catch (NoSuchAlgorithmException e)
         {
             throw new RuntimeException(e);
         }
         user.setPassword(securedPassword);
+        user.setSalt(salt);
         userDao.save(user);
         return user;
     }
