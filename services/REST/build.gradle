@@ -1,4 +1,5 @@
 apply plugin: "war"
+apply plugin:'application'
 apply plugin: 'spring-boot'
 
 group = 'by.chronology.service.rest'
@@ -18,6 +19,12 @@ jar {
     baseName = 'gs-spring-boot'
     version =  '0.1.0'
 }
+
+mainClassName = "by.chronology.service.Runner"
+
+applicationDefaultJvmArgs = [
+        "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+]
 
 dependencies {
     compile project(':domains:core:core-model')
