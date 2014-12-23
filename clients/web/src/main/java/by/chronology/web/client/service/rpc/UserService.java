@@ -1,5 +1,6 @@
 package by.chronology.web.client.service.rpc;
 
+import by.chronology.web.client.model.User;
 import by.chronology.web.client.model.UserAccount;
 import by.chronology.web.client.model.UserContext;
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -23,4 +24,13 @@ public interface UserService extends RemoteService
      *          object contains full user info and roles.
      */
     UserContext login(UserAccount userAccount);
+
+
+    /**
+     * Perform update operation on {@link by.chronology.web.client.model.User} entity.
+     *
+     * @param user object needs to be updated
+     * @return updated object
+     */
+    User update(User user);
 }
