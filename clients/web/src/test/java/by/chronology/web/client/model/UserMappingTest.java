@@ -1,6 +1,6 @@
 package by.chronology.web.client.model;
 
-import by.chronology.common.test.UnitTestUtils;
+import by.chronology.core.model.util.CoreModelTestUtil;
 import org.dozer.DozerBeanMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,9 +9,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
-import static by.chronology.common.test.UnitTestUtils.EMAIL;
-import static by.chronology.common.test.UnitTestUtils.ID;
-import static by.chronology.common.test.UnitTestUtils.PASSWORD;
+import static by.chronology.core.model.util.CoreModelTestUtil.EMAIL;
+import static by.chronology.core.model.util.CoreModelTestUtil.ID;
+import static by.chronology.core.model.util.CoreModelTestUtil.PASSWORD;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -28,7 +28,7 @@ public class UserMappingTest
     @Test
     public void convertToUI()
     {
-        final by.chronology.core.model.User userModel = UnitTestUtils.createUserModel(ID, EMAIL, PASSWORD);
+        final by.chronology.core.model.User userModel = CoreModelTestUtil.createUserModel(ID, EMAIL, PASSWORD);
         final by.chronology.web.client.model.User userUI = mapper.map(userModel, by.chronology.web.client.model.User.class);
         checkUserUI(userUI);
     }

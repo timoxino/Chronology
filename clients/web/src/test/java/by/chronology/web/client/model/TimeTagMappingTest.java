@@ -1,6 +1,6 @@
 package by.chronology.web.client.model;
 
-import by.chronology.common.test.UnitTestUtils;
+import by.chronology.core.model.util.CoreModelTestUtil;
 import by.chronology.core.model.TimeTag;
 import org.dozer.DozerBeanMapper;
 import org.junit.Test;
@@ -10,12 +10,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
-import static by.chronology.common.test.UnitTestUtils.DESCRIPTION;
-import static by.chronology.common.test.UnitTestUtils.EMAIL;
-import static by.chronology.common.test.UnitTestUtils.ID;
-import static by.chronology.common.test.UnitTestUtils.NAME;
-import static by.chronology.common.test.UnitTestUtils.PASSWORD;
-import static by.chronology.common.test.UnitTestUtils.TAG_TIMESTAMP;
+import static by.chronology.core.model.util.CoreModelTestUtil.DESCRIPTION;
+import static by.chronology.core.model.util.CoreModelTestUtil.EMAIL;
+import static by.chronology.core.model.util.CoreModelTestUtil.ID;
+import static by.chronology.core.model.util.CoreModelTestUtil.NAME;
+import static by.chronology.core.model.util.CoreModelTestUtil.PASSWORD;
+import static by.chronology.core.model.util.CoreModelTestUtil.TAG_TIMESTAMP;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -32,8 +32,8 @@ public class TimeTagMappingTest
     @Test
     public void convertToUI()
     {
-        final TimeTag timeTagModel = UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION);
-        timeTagModel.setUser(UnitTestUtils.createUserModel(ID, EMAIL, PASSWORD));
+        final TimeTag timeTagModel = CoreModelTestUtil.createTimeTagModel(ID, NAME, DESCRIPTION);
+        timeTagModel.setUser(CoreModelTestUtil.createUserModel(ID, EMAIL, PASSWORD));
         final by.chronology.web.client.model.TimeTag timeTagUI = mapper.map(timeTagModel, by.chronology.web.client.model.TimeTag.class);
         checkTimeTagUI(timeTagUI);
     }

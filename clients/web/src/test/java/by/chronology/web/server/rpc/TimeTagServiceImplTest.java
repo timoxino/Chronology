@@ -1,8 +1,8 @@
 package by.chronology.web.server.rpc;
 
-import static by.chronology.common.test.UnitTestUtils.DESCRIPTION;
-import static by.chronology.common.test.UnitTestUtils.ID;
-import static by.chronology.common.test.UnitTestUtils.NAME;
+import static by.chronology.core.model.util.CoreModelTestUtil.DESCRIPTION;
+import static by.chronology.core.model.util.CoreModelTestUtil.ID;
+import static by.chronology.core.model.util.CoreModelTestUtil.NAME;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -21,7 +21,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
-import by.chronology.common.test.UnitTestUtils;
+import by.chronology.core.model.util.CoreModelTestUtil;
 import by.chronology.web.client.model.TimeTag;
 
 /**
@@ -110,8 +110,8 @@ public class TimeTagServiceImplTest
     private ArrayList<by.chronology.core.model.TimeTag> populateTimeTagsModel()
     {
         final ArrayList<by.chronology.core.model.TimeTag> timeTagsModel = new ArrayList<by.chronology.core.model.TimeTag>();
-        timeTagsModel.add(UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION));
-        timeTagsModel.add(UnitTestUtils.createTimeTagModel(ID, NAME, DESCRIPTION));
+        timeTagsModel.add(CoreModelTestUtil.createTimeTagModel(ID, NAME, DESCRIPTION));
+        timeTagsModel.add(CoreModelTestUtil.createTimeTagModel(ID, NAME, DESCRIPTION));
         return timeTagsModel;
     }
 }
