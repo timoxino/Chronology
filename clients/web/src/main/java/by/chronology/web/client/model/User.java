@@ -42,4 +42,15 @@ public class User implements Serializable
     {
         this.password = password;
     }
+
+    // auxiliary method for compatibility with by.chronology.core.model.User bean.
+    public String getSalt()
+    {
+        return null;
+    }
+
+    // auxiliary method for compatibility with by.chronology.core.model.User bean.
+    public void setSalt(String salt)
+    {
+    }
 }
