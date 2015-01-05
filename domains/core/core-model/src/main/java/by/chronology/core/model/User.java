@@ -56,7 +56,7 @@ public class User
         this.password = password;
     }
 
-    @Column(name = "SALT", nullable = false)
+    @Column(name = "SALT")
     public String getSalt()
     {
         return salt;

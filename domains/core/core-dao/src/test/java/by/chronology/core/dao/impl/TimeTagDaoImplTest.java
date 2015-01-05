@@ -49,7 +49,6 @@ public class TimeTagDaoImplTest
         final User user = new User();
         user.setEmail("test@gmail.com");
         user.setPassword("pass");
-        user.setSalt("salt");
         session.save(user);
 
         final TimeTag timeTag1 = new TimeTag();
@@ -116,7 +115,10 @@ public class TimeTagDaoImplTest
         final TimeTag timeTag = new TimeTag();
         timeTag.setTagName("test 1");
         timeTag.setTagTimestamp(new Timestamp(getDateInMillis(2014, 3, 24)));
-        timeTag.setUser(userDao.getAll().get(0));
+        final User storedUser = userDao.getAll().get(0);
+        final User user = new User();
+        user.setId(storedUser.getId());
+        timeTag.setUser(user);
         timeTagDao.save(timeTag);
     }
 
