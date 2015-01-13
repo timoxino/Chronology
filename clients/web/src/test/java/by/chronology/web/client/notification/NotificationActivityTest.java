@@ -2,10 +2,10 @@ package by.chronology.web.client.notification;
 
 import by.chronology.web.client.component.AlertComponent;
 import by.chronology.web.client.event.ShowAlertEvent;
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.gwt.junit.GWTMockUtilities;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

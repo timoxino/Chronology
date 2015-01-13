@@ -4,12 +4,12 @@ import by.chronology.web.client.event.ShowAlertEvent;
 import by.chronology.web.client.model.TimeTag;
 import by.chronology.web.client.notification.NotificationMessages;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.junit.GWTMockUtilities;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.Widget;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -120,7 +120,7 @@ public class TrackActivityTest
         ArgumentCaptor<ShowAlertEvent> captor = ArgumentCaptor.forClass(ShowAlertEvent.class);
         verify(eventBus).fireEvent(captor.capture());
 
-        checkEvent(captor, AlertType.ERROR, FAILURE, NOT_SAVED);
+        checkEvent(captor, AlertType.DANGER, FAILURE, NOT_SAVED);
     }
 
     private void checkEvent(ArgumentCaptor<ShowAlertEvent> captor, AlertType alertType, String heading, String message)

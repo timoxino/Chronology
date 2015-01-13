@@ -1,7 +1,5 @@
 package by.chronology.web.client.component;
 
-import com.github.gwtbootstrap.client.ui.AlertBlock;
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -9,9 +7,11 @@ import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
+import org.gwtbootstrap3.client.ui.Alert;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 
 /**
- * Wrapper for {@link AlertBlock} class that provides a convenient way to use alerts out of the box.
+ * Wrapper for {@link Alert} class that provides a convenient way to use alerts out of the box.
  * Hidden automatically(in 4 seconds by default).
  *
  * @author Tsimafei_Shchytkavets
@@ -23,7 +23,7 @@ public class AlertComponent implements IsWidget
     @UiField
     HTMLPanel panel;
     @UiField
-    AlertBlock alert;
+    Alert alert;
 
     interface MyUiBinder extends UiBinder<HTMLPanel, AlertComponent>
     {
@@ -72,7 +72,6 @@ public class AlertComponent implements IsWidget
     public void show(AlertType alertType, String heading, String message)
     {
         alert.setType(alertType);
-        alert.setHeading(heading);
         alert.setText(message);
         alert.setVisible(true);
         hideAfterDelay(TIME_TO_DISPLAY);

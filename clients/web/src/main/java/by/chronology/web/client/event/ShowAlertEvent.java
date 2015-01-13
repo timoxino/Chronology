@@ -1,6 +1,6 @@
 package by.chronology.web.client.event;
 
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 
 /**
  * @author Tsimafei_Shchytkavets

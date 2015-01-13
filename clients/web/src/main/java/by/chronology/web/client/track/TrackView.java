@@ -2,15 +2,17 @@ package by.chronology.web.client.track;
 
 import by.chronology.web.client.model.TimeTag;
 import by.chronology.web.client.model.User;
-import com.github.gwtbootstrap.client.ui.Button;
-import com.github.gwtbootstrap.client.ui.TextBox;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FlowPanel;
+import org.gwtbootstrap3.client.ui.Button;
+import org.gwtbootstrap3.client.ui.Form;
+import org.gwtbootstrap3.client.ui.TextBox;
+import org.gwtbootstrap3.client.ui.constants.ButtonSize;
+import org.gwtbootstrap3.client.ui.constants.ButtonType;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -29,7 +31,7 @@ public class TrackView extends Composite
 
     TrackActivity trackActivity;
 
-    interface MyUiBinder extends UiBinder<FlowPanel, TrackView>
+    interface MyUiBinder extends UiBinder<Form, TrackView>
     {
     }
 
@@ -38,6 +40,8 @@ public class TrackView extends Composite
     public TrackView()
     {
         initWidget(uiBinder.createAndBindUi(this));
+        trackButton.setSize(ButtonSize.SMALL);
+        trackButton.setType(ButtonType.INFO);
     }
 
     public void setPresenter(TrackActivity activity)

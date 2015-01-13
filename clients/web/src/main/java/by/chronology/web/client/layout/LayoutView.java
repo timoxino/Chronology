@@ -4,8 +4,8 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
+import org.gwtbootstrap3.client.ui.Container;
 
 /**
  * Base markup for web application.
@@ -25,7 +25,7 @@ public class LayoutView extends Composite
     @UiField
     SimplePanel bodyPanel;
 
-    interface MyUiBinder extends UiBinder<FlowPanel, LayoutView>
+    interface MyUiBinder extends UiBinder<Container, LayoutView>
     {
     }
 

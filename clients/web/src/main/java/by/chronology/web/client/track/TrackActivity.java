@@ -4,7 +4,6 @@ import by.chronology.web.client.event.ShowAlertEvent;
 import by.chronology.web.client.notification.NotificationMessages;
 import by.chronology.web.client.service.rpc.TimeTagServiceAsync;
 
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
@@ -12,6 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 
 /**
  * Control 'Track panel' with a life cycle managed by an ActivityManager.
@@ -62,7 +62,7 @@ public class TrackActivity extends AbstractActivity
         @Override
         public void onFailure(Throwable caught)
         {
-            eventBus.fireEvent(new ShowAlertEvent(AlertType.ERROR, messages.failure(), messages.timeTagWasNotSaved()));
+            eventBus.fireEvent(new ShowAlertEvent(AlertType.DANGER, messages.failure(), messages.timeTagWasNotSaved()));
         }
     }
 }

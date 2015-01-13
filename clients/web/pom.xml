@@ -23,7 +23,7 @@
     <gwtVersion>2.7.0</gwtVersion>
     <gin.version>1.5.0</gin.version>
     <dozer.version>5.4.0</dozer.version>
-    <gwt.bootstrap.version>2.3.2.0-SNAPSHOT</gwt.bootstrap.version>
+    <gwt.bootstrap3.version>0.9-SNAPSHOT</gwt.bootstrap3.version>
 
     <!-- GWT needs at least java 1.5 -->
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -55,9 +55,9 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.github.gwtbootstrap</groupId>
-      <artifactId>gwt-bootstrap</artifactId>
-      <version>${gwt.bootstrap.version}</version>
+      <groupId>org.gwtbootstrap3</groupId>
+      <artifactId>gwtbootstrap3</artifactId>
+      <version>${gwt.bootstrap3.version}</version>
     </dependency>
 
     <dependency>
